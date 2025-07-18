@@ -6,3 +6,5 @@ export interface Post {
 	slug?: string;
 	tags?: string[];
 }
+
+export type BlogPost = Post;

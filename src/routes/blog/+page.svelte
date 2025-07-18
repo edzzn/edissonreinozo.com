@@ -30,16 +30,18 @@
 		if (searchTerm) {
 			const term = searchTerm.toLowerCase();
 			filtered = filtered.filter(
-				(post) =>
+				(post: Post) =>
 					post.title.toLowerCase().includes(term) ||
 					post.description?.toLowerCase().includes(term) ||
-					post.tags?.some((tag) => tag.toLowerCase().includes(term))
+					post.tags?.some((tag: string) => tag.toLowerCase().includes(term))
 			);
 		}
 
 		// Filtrar por etiquetas
 		if (selectedTags.length > 0) {
-			filtered = filtered.filter((post) => selectedTags.every((tag) => post.tags?.includes(tag)));
+			filtered = filtered.filter((post: Post) =>
+				selectedTags.every((tag) => post.tags?.includes(tag))
+			);
 		}
 
 		return filtered;

@@ -11,7 +11,7 @@
 
 	function toggleTag(tag: string) {
 		if (selectedTags.includes(tag)) {
-			selectedTags = selectedTags.filter((t) => t !== tag);
+			selectedTags = selectedTags.filter((t: string) => t !== tag);
 		} else {
 			selectedTags = [...selectedTags, tag];
 		}

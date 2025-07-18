@@ -30,7 +30,7 @@ export async function load({ url }) {
 	const allTags = new Set<string>();
 
 	allPosts.forEach((post) => {
-		post.tags?.forEach((tag) => {
+		post.tags?.forEach((tag: string) => {
 			allTags.add(tag);
 			tagCounts[tag] = (tagCounts[tag] || 0) + 1;
 		});
