@@ -1,8 +1,8 @@
 ---
-title: "Test de Componentes en Markdown"
-date: "2025-01-18"
-description: "Probando el uso de componentes de Svelte dentro de archivos markdown"
-tags: ["svelte", "test"]
+title: 'Test de Componentes en Markdown'
+date: '2025-01-18'
+description: 'Probando el uso de componentes de Svelte dentro de archivos markdown'
+tags: ['svelte', 'test']
 ---
 
 <script>
@@ -25,7 +25,7 @@ Aquí hay un ejemplo de código JavaScript:
 
 ```javascript
 function saludar(nombre) {
-  return `Hola, ${nombre}!`;
+	return `Hola, ${nombre}!`;
 }
 
 const mensaje = saludar('Mundo');
@@ -51,16 +51,14 @@ print(factorial(5))  # Output: 120
 import React, { useState } from 'react';
 
 function Counter() {
-  const [count, setCount] = useState(0);
+	const [count, setCount] = useState(0);
 
-  return (
-    <div>
-      <p>Has hecho click {count} veces</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+	return (
+		<div>
+			<p>Has hecho click {count} veces</p>
+			<button onClick={() => setCount(count + 1)}>Click me</button>
+		</div>
+	);
 }
 
 export default Counter;

@@ -12,23 +12,35 @@ const mdsvexOptions = {
 		highlighter: async (code, lang = 'text') => {
 			const highlighter = await createHighlighter({
 				themes: ['github-dark', 'github-light'],
-				langs: ['javascript', 'typescript', 'python', 'jsx', 'tsx', 'css', 'html', 'bash', 'json', 'dart', 'yaml']
+				langs: [
+					'javascript',
+					'typescript',
+					'python',
+					'jsx',
+					'tsx',
+					'css',
+					'html',
+					'bash',
+					'json',
+					'dart',
+					'yaml'
+				]
 			});
-			
+
 			const darkHtml = highlighter.codeToHtml(code, {
 				lang,
 				theme: 'github-dark'
 			});
-			
+
 			const lightHtml = highlighter.codeToHtml(code, {
 				lang,
 				theme: 'github-light'
 			});
-			
+
 			// Escape curly braces for Svelte
 			const escapedLightHtml = lightHtml.replace(/\{/g, '&#123;').replace(/\}/g, '&#125;');
 			const escapedDarkHtml = darkHtml.replace(/\{/g, '&#123;').replace(/\}/g, '&#125;');
-			
+
 			return `<div class="code-block dark:hidden">${escapedLightHtml}</div><div class="code-block hidden dark:block">${escapedDarkHtml}</div>`;
 		}
 	},
@@ -39,10 +51,7 @@ const mdsvexOptions = {
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: [
-		vitePreprocess(),
-		mdsvex(mdsvexOptions)
-	],
+	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 	kit: { adapter: adapter() },
 	extensions: ['.svelte', '.md']
 };

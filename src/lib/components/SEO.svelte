@@ -10,15 +10,15 @@
 		url?: string;
 		image?: string;
 	}>();
-	
+
 	const siteTitle = 'Edisson Reinozo | LLMs, SvelteKit y SaaS';
-	const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
+	const fullTitle = title === siteTitle ? title : title;
 </script>
 
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
-	
+
 	<!-- Open Graph -->
 	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description} />
@@ -29,7 +29,7 @@
 	{#if image}
 		<meta property="og:image" content={image} />
 	{/if}
-	
+
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={fullTitle} />

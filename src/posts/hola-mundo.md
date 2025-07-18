@@ -57,4 +57,4 @@ Si estos temas resuenan contigo, te invito a seguir este blog. Publicaré conten
 
 ---
 
-*Este es el primer artículo de una nueva etapa. Gracias por acompañarme en este viaje.*
+_Este es el primer artículo de una nueva etapa. Gracias por acompañarme en este viaje._
