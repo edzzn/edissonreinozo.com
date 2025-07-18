@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Post } from '$lib/types';
-	import { formatDate } from '$lib/utils';
 	import SEO from '$lib/components/SEO.svelte';
+	import PostCard from '$lib/components/PostCard.svelte';
 	
 	let { data } = $props<{ data: { posts: Post[] } }>();
 	
@@ -23,23 +23,20 @@
 		
 		{#if posts.length > 0}
 			<div class="space-y-6">
-				{#each posts as post}
-					<article class="border-b border-gray-200 pb-6 last:border-0">
-						<h3 class="text-xl font-semibold mb-2">
-							<a 
-								href="/articulos/{post.slug}" 
-								class="text-[#663399] hover:text-purple-800 transition-colors"
-							>
-								{post.title}
-							</a>
-						</h3>
-						<time class="text-sm text-gray-500">{formatDate(post.date)}</time>
-						{#if post.description}
-							<p class="mt-2 text-gray-600">{post.description}</p>
-						{/if}
-					</article>
+				{#each posts.slice(0, 5) as post}
+					<PostCard {post} />
 				{/each}
 			</div>
+			{#if posts.length > 5}
+				<div class="mt-8 text-center">
+					<a 
+						href="/articulos" 
+						class="inline-block bg-[#663399] text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
+					>
+						Ver todos los artículos →
+					</a>
+				</div>
+			{/if}
 		{:else}
 			<p class="text-gray-500">No hay artículos publicados todavía.</p>
 		{/if}

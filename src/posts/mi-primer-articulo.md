@@ -3,6 +3,7 @@ title: 'Mi primer artículo'
 date: '2020-05-22'
 description: 'Este es mi primer artículo en mi nuevo blog con SvelteKit.'
 published: true
+tags: ['sveltekit', 'blog', 'migracion']
 ---
 
 Hola mundo este es mi primer artículo.

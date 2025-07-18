@@ -14,7 +14,8 @@ export async function load() {
         title: metadata.title || 'Sin título',
         date: metadata.date || '',
         description: metadata.description || '',
-        published: metadata.published !== false
+        published: metadata.published !== false,
+        tags: metadata.tags || []
       } satisfies Post;
     })
     .filter(post => post.published)

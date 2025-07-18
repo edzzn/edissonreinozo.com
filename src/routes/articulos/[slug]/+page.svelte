@@ -9,6 +9,7 @@
 				title: string;
 				date: string;
 				description?: string;
+				tags?: string[];
 			};
 		};
 	}>();
@@ -23,8 +24,20 @@
 
 <article class="prose prose-lg max-w-none">
 	<header class="mb-8">
-		<h1 class="text-4xl font-bold text-gray-900 mb-2">{metadata.title}</h1>
-		<time class="text-gray-500">{formatDate(metadata.date)}</time>
+		<h1 class="text-4xl font-bold text-gray-900 mb-4">{metadata.title}</h1>
+		<div class="flex items-center gap-3 text-gray-500">
+			<time>{formatDate(metadata.date)}</time>
+			{#if metadata.tags && metadata.tags.length > 0}
+				<span>•</span>
+				<div class="flex flex-wrap gap-2">
+					{#each metadata.tags as tag}
+						<span class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm">
+							#{tag}
+						</span>
+					{/each}
+				</div>
+			{/if}
+		</div>
 	</header>
 	
 	<div class="markdown-content">

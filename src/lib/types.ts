@@ -4,4 +4,5 @@ export interface Post {
   description?: string;
   published: boolean;
   slug?: string;
+  tags?: string[];
 }
