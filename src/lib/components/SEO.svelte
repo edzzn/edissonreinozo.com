@@ -1,7 +1,7 @@
 <script lang="ts">
 	let {
-		title = 'Edisson Reinozo | React/Flutter y AWS',
-		description = 'Aprende React/Flutter/AWS.',
+		title = 'Edisson Reinozo | LLMs, SvelteKit y SaaS',
+		description = 'Explorando LLMs, desarrollo con SvelteKit y emprendimiento SaaS.',
 		url = '',
 		image = ''
 	} = $props<{
@@ -11,7 +11,7 @@
 		image?: string;
 	}>();
 	
-	const siteTitle = 'Edisson Reinozo | React/Flutter y AWS';
+	const siteTitle = 'Edisson Reinozo | LLMs, SvelteKit y SaaS';
 	const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 </script>
 

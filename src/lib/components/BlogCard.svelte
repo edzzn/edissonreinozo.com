@@ -24,7 +24,7 @@
 </script>
 
 <article class="blog-card group {featured ? 'featured' : ''}">
-  <a href="/articulos/{post.slug}" class="block h-full">
+  <a href="/blog/{post.slug}" class="block h-full">
     <div class="card-content">
       <!-- Meta information -->
       <div class="meta">

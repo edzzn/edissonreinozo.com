@@ -52,7 +52,7 @@
 		if (searchTerm) params.set('q', searchTerm);
 		if (selectedTags.length > 0) params.set('tag', selectedTags[0]);
 		
-		const newUrl = params.toString() ? `/articulos?${params.toString()}` : '/articulos';
+		const newUrl = params.toString() ? `/blog?${params.toString()}` : '/blog';
 		if ($page.url.pathname + $page.url.search !== newUrl) {
 			goto(newUrl, { replaceState: true, keepFocus: true });
 		}
@@ -60,15 +60,15 @@
 </script>
 
 <SEO 
-	title="Todos los artículos"
-	description="Archivo completo de artículos sobre React, Flutter, AWS y desarrollo web."
+	title="Blog"
+	description="Artículos sobre LLMs, desarrollo con SvelteKit, Supabase y emprendimiento SaaS."
 />
 
 <div class="max-w-7xl mx-auto">
 	<header class="mb-8">
-		<h1 class="text-4xl font-bold text-foreground mb-4">Todos los artículos</h1>
+		<h1 class="text-4xl font-bold text-foreground mb-4">Blog</h1>
 		<p class="text-lg text-muted-foreground">
-			Explora todos los artículos publicados. Usa los filtros para encontrar lo que buscas.
+			Explorando la intersección entre IA, desarrollo moderno y emprendimiento.
 		</p>
 	</header>
 	
