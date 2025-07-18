@@ -66,8 +66,8 @@
 
 <div class="max-w-7xl mx-auto">
 	<header class="mb-8">
-		<h1 class="text-4xl font-bold text-gray-900 mb-4">Todos los artículos</h1>
-		<p class="text-lg text-gray-600">
+		<h1 class="text-4xl font-bold text-foreground mb-4">Todos los artículos</h1>
+		<p class="text-lg text-muted-foreground">
 			Explora todos los artículos publicados. Usa los filtros para encontrar lo que buscas.
 		</p>
 	</header>
@@ -85,12 +85,12 @@
 				/>
 				
 				<!-- Estadísticas -->
-				<div class="bg-gray-50 rounded-lg p-4 text-sm">
-					<p class="text-gray-600">
-						<span class="font-semibold text-gray-900">{data.posts.length}</span> artículos publicados
+				<div class="bg-muted rounded-lg p-4 text-sm">
+					<p class="text-muted-foreground">
+						<span class="font-semibold text-foreground">{data.posts.length}</span> artículos publicados
 					</p>
-					<p class="text-gray-600 mt-1">
-						<span class="font-semibold text-gray-900">{data.tags.length}</span> etiquetas
+					<p class="text-muted-foreground mt-1">
+						<span class="font-semibold text-foreground">{data.tags.length}</span> etiquetas
 					</p>
 				</div>
 			</div>
@@ -105,7 +105,7 @@
 				<button
 					type="button"
 					onclick={() => showMobileFilters = !showMobileFilters}
-					class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+					class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-muted-foreground bg-background border border-border rounded-lg hover:bg-muted"
 				>
 					<span>Filtros</span>
 					<svg class="w-5 h-5 transform transition-transform {showMobileFilters ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +114,7 @@
 				</button>
 				
 				{#if showMobileFilters}
-					<div class="p-4 bg-gray-50 rounded-lg">
+					<div class="p-4 bg-muted rounded-lg">
 						<TagFilter 
 							tags={data.tags}
 							bind:selectedTags
@@ -127,13 +127,13 @@
 			<!-- Filtros activos -->
 			{#if searchTerm || selectedTags.length > 0}
 				<div class="mb-6 flex flex-wrap items-center gap-2">
-					<span class="text-sm text-gray-600">Filtros activos:</span>
+					<span class="text-sm text-muted-foreground">Filtros activos:</span>
 					
 					{#if searchTerm}
 						<button
 							type="button"
 							onclick={() => searchTerm = ''}
-							class="inline-flex items-center gap-1 px-3 py-1 text-sm bg-[#663399] text-white rounded-full hover:bg-purple-700"
+							class="inline-flex items-center gap-1 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-full hover:bg-primary/90"
 						>
 							<span>"{searchTerm}"</span>
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@
 						<button
 							type="button"
 							onclick={() => selectedTags = selectedTags.filter(t => t !== tag)}
-							class="inline-flex items-center gap-1 px-3 py-1 text-sm bg-[#663399] text-white rounded-full hover:bg-purple-700"
+							class="inline-flex items-center gap-1 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-full hover:bg-primary/90"
 						>
 							<span>#{tag}</span>
 							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,7 +158,7 @@
 					<button
 						type="button"
 						onclick={() => { searchTerm = ''; selectedTags = []; }}
-						class="text-sm text-[#663399] hover:text-purple-800"
+						class="text-sm text-primary hover:text-primary/80"
 					>
 						Limpiar todo
 					</button>
@@ -166,9 +166,9 @@
 			{/if}
 			
 			<!-- Contador de resultados -->
-			<div class="mb-6 text-sm text-gray-600">
-				Mostrando <span class="font-semibold text-gray-900">{filteredPosts.length}</span> 
-				de <span class="font-semibold text-gray-900">{data.posts.length}</span> artículos
+			<div class="mb-6 text-sm text-muted-foreground">
+				Mostrando <span class="font-semibold text-foreground">{filteredPosts.length}</span> 
+				de <span class="font-semibold text-foreground">{data.posts.length}</span> artículos
 			</div>
 			
 			<!-- Lista de artículos -->
@@ -180,17 +180,17 @@
 				</div>
 			{:else}
 				<div class="text-center py-12">
-					<svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg class="mx-auto h-12 w-12 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 					</svg>
-					<h3 class="mt-2 text-sm font-medium text-gray-900">No se encontraron artículos</h3>
-					<p class="mt-1 text-sm text-gray-500">
+					<h3 class="mt-2 text-sm font-medium text-foreground">No se encontraron artículos</h3>
+					<p class="mt-1 text-sm text-muted-foreground">
 						Intenta ajustar los filtros o términos de búsqueda.
 					</p>
 					<button
 						type="button"
 						onclick={() => { searchTerm = ''; selectedTags = []; }}
-						class="mt-4 text-sm text-[#663399] hover:text-purple-800"
+						class="mt-4 text-sm text-primary hover:text-primary/80"
 					>
 						Limpiar filtros
 					</button>

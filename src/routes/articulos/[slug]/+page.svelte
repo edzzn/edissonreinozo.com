@@ -24,16 +24,19 @@
 
 <article class="prose prose-lg max-w-none">
 	<header class="mb-8">
-		<h1 class="text-4xl font-bold text-gray-900 mb-4">{metadata.title}</h1>
-		<div class="flex items-center gap-3 text-gray-500">
+		<h1 class="text-4xl font-bold text-foreground mb-4">{metadata.title}</h1>
+		<div class="flex items-center gap-3 text-muted-foreground">
 			<time>{formatDate(metadata.date)}</time>
 			{#if metadata.tags && metadata.tags.length > 0}
 				<span>•</span>
 				<div class="flex flex-wrap gap-2">
 					{#each metadata.tags as tag}
-						<span class="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm">
+						<a 
+							href="/articulos?tag={encodeURIComponent(tag)}"
+							class="inline-block bg-muted text-muted-foreground px-3 py-1 rounded-md text-sm hover:bg-muted/80 transition-colors"
+						>
 							#{tag}
-						</span>
+						</a>
 					{/each}
 				</div>
 			{/if}
@@ -44,8 +47,8 @@
 		<Content />
 	</div>
 	
-	<footer class="mt-12 pt-6 border-t border-gray-200">
-		<a href="/" class="text-[#663399] hover:text-purple-800 transition-colors">
+	<footer class="mt-12 pt-6 border-t border-border">
+		<a href="/" class="text-primary hover:text-primary/80 transition-colors">
 			← Volver al inicio
 		</a>
 	</footer>
@@ -72,32 +75,46 @@
 	}
 	
 	.markdown-content :global(a) {
-		color: #663399;
+		color: var(--color-primary);
 		transition: color 150ms ease;
 	}
 	
 	.markdown-content :global(a:hover) {
-		color: rgb(147, 51, 234);
+		opacity: 0.8;
 	}
 	
-	.markdown-content :global(code) {
-		background-color: rgb(243, 244, 246);
+	/* Inline code */
+	.markdown-content :global(:not(pre) > code) {
+		background-color: var(--color-muted);
 		padding: 0.125rem 0.25rem;
 		border-radius: 0.25rem;
 		font-size: 0.875rem;
+		font-family: var(--font-mono, monospace);
 	}
 	
-	.markdown-content :global(pre) {
-		background-color: rgb(243, 244, 246);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		overflow-x: auto;
+	/* Code blocks from Shiki */
+	.markdown-content :global(.code-block) {
 		margin-bottom: 1rem;
 	}
 	
-	.markdown-content :global(pre code) {
+	.markdown-content :global(.code-block pre) {
+		padding: 1rem;
+		border-radius: 0.5rem;
+		overflow-x: auto;
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+	
+	.markdown-content :global(.code-block code) {
 		background-color: transparent;
 		padding: 0;
+		font-family: var(--font-mono, monospace);
+	}
+	
+	/* Shiki theme overrides */
+	.markdown-content :global(.shiki) {
+		background-color: var(--shiki-bg) !important;
 	}
 	
 	.markdown-content :global(ul),
@@ -111,7 +128,7 @@
 	}
 	
 	.markdown-content :global(blockquote) {
-		border-left: 4px solid rgb(209, 213, 219);
+		border-left: 4px solid var(--color-border);
 		padding-left: 1rem;
 		font-style: italic;
 		margin: 1rem 0;

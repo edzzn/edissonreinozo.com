@@ -19,7 +19,7 @@
 </script>
 
 <div class="space-y-3">
-	<h3 class="font-semibold text-gray-900">Etiquetas</h3>
+	<h3 class="font-semibold text-foreground">Etiquetas</h3>
 	<div class="space-y-2">
 		{#each tags as tag}
 			<button
@@ -27,12 +27,12 @@
 				onclick={() => toggleTag(tag)}
 				class="flex items-center justify-between w-full px-3 py-2 text-sm rounded-lg transition-colors
 					{selectedTags.includes(tag) 
-						? 'bg-[#663399] text-white' 
-						: 'bg-gray-100 text-gray-700 hover:bg-gray-200'}"
+						? 'bg-primary text-primary-foreground' 
+						: 'bg-muted text-muted-foreground hover:bg-muted/80'}"
 			>
 				<span>#{tag}</span>
 				{#if tagCounts[tag]}
-					<span class="ml-2 text-xs {selectedTags.includes(tag) ? 'text-purple-100' : 'text-gray-500'}">
+					<span class="ml-2 text-xs {selectedTags.includes(tag) ? 'text-primary-foreground/80' : 'text-muted-foreground'}">
 						({tagCounts[tag]})
 					</span>
 				{/if}
@@ -44,7 +44,7 @@
 		<button
 			type="button"
 			onclick={() => selectedTags = []}
-			class="text-sm text-[#663399] hover:text-purple-800"
+			class="text-sm text-primary hover:text-primary/80"
 		>
 			Limpiar filtros
 		</button>
