@@ -23,7 +23,9 @@ const mdsvexOptions = {
 					'bash',
 					'json',
 					'dart',
-					'yaml'
+					'yaml',
+					'markdown',
+					'md'
 				]
 			});
 

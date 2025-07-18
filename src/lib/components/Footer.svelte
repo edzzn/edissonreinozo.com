@@ -19,9 +19,7 @@
 	];
 
 	const footerLinks = [
-		{ href: '/blog', label: 'Blog' },
-		{ href: '/proyectos', label: 'Proyectos' },
-		{ href: '/rss.xml', label: 'RSS' }
+		{ href: '/blog', label: 'Blog' }
 	];
 </script>
 

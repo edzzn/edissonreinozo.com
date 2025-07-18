@@ -1,168 +1,212 @@
 ---
-title: Cómo construimos esta web con Claude y SvelteKit
+title: Context Engineering - El nuevo paradigma del desarrollo con IA
 date: 2025-01-18
-description: La historia detrás de la migración de Gatsby a SvelteKit y cómo Claude Code transformó completamente el diseño en una sesión
-tags: [sveltekit, claude, desarrollo, meta]
+description: Cómo un cambio de mentalidad transformó por completo la forma de construir software con Claude
+tags: [ai, desarrollo, context-engineering, claude]
 ---
 
-## De Gatsby a SvelteKit en una tarde
+## Ya no es prompt engineering, es context engineering
 
-Lo que empezó como una simple migración de Gatsby a SvelteKit terminó siendo una transformación completa del sitio. Y todo gracias a una conversación con Claude Code.
+Este es el cambio más importante en el desarrollo con IA que nadie está discutiendo. Dejé de escribir prompts elaborados y empecé a construir contextos ricos. El resultado fue una transformación completa de mi sitio web en una sola sesión con Claude.
 
-Pero aquí está el insight clave: **ya no es prompt engineering, es context engineering**.
+## El descubrimiento
 
-## El punto de partida
+Todo empezó con una migración aparentemente simple: mover un blog de Gatsby a SvelteKit. Pero lo que descubrí en el proceso cambió fundamentalmente mi forma de trabajar con IA.
 
-Tenía un blog en Gatsby que hablaba de React, Flutter y AWS. Temas que ya no me apasionaban tanto. Mi interés había evolucionado hacia los LLMs, SvelteKit y el emprendimiento SaaS. Era momento de un cambio.
+En lugar de escribir prompts como:
 
-### Context Engineering: El nuevo paradigma
+- "Crea un componente de blog con filtros"
+- "Añade dark mode al sitio"
+- "Implementa búsqueda en los posts"
 
-El primer paso fue obtener un contexto completo del proyecto anterior. No se trataba de escribir mejores prompts, sino de darle a Claude toda la información necesaria para entender profundamente el sistema.
+Hice algo diferente. Le di a Claude acceso completo al proyecto existente y le pedí que lo entendiera profundamente. El resultado fue revelador.
 
-Le pedí que:
+## Context Engineering en acción
 
-1. Explorara toda la estructura del proyecto Gatsby
-2. Entendiera cómo funcionaba el blog
-3. Documentara sus hallazgos
-4. Generara un plan de migración
+### Paso 1: Construcción del contexto
 
-Claude analizó el código, entendió la arquitectura y creó un documento detallado. Este contexto rico y completo fue la base para todo lo que vino después. Sin él, habría sido imposible lograr una migración tan fluida.
-
-### Los pasos de la migración
-
-Con el contexto completo del proyecto anterior, seguimos estos pasos:
-
-1. **`sv create`** - Creamos un proyecto SvelteKit nuevo desde cero
-2. **Esqueleto basado en el contexto** - Usando el conocimiento del proyecto Gatsby, creamos la estructura base
-3. **Theme básico + Dark mode** - Establecimos un sistema de temas desde el inicio con toggle funcional
-4. **Features del blog** - Agregamos tags, filtros, búsqueda y todas las funcionalidades
-5. **Perfeccionar el diseño** - Iteramos sobre la UI hasta lograr el minimalismo deseado
-
-### Stack técnico resultante
-
-- SvelteKit v2 con Svelte 5 (usando las nuevas runas)
-- MDsveX para procesar Markdown
-- Tailwind CSS v4
-- TypeScript en modo estricto
-
-## La transformación con Claude
-
-Lo que hace especial a esta historia es cómo cada paso fue una conversación. No hubo documentación que consultar, ni tutoriales que seguir. Solo contexto y diálogo.
-
-### Aplicando mejoras de UI
-
-Después de navegar por el sitio, Claude hizo una crítica constructiva del diseño y sugirió mejoras. Con un simple "apply all", implementó:
-
-- **Paleta minimalista**: Modo claro con blanco puro y modo oscuro con negro verdadero
-- **Tipografía Inter**: Para mejor legibilidad
-- **Sistema de espaciado 8px**: Consistencia visual en todo el sitio
-- **Footer simplificado**: Menos altura, iconos SVG para redes sociales
-- **Micro-interacciones**: Transiciones suaves, efectos hover, blur en el header al scrollear
-
-### Feedback loops con Playwright
-
-Un aspecto revolucionario fue cómo Claude puede validar su propio trabajo. Con Playwright integrado, Claude puede:
-
-- **Navegar por el sitio** como lo haría un usuario real
-- **Verificar que los enlaces funcionan** antes de reportar que terminó
-- **Tomar screenshots** para confirmar que el diseño se ve correcto
-- **Detectar errores 404** y crear las páginas faltantes automáticamente
-
-Este ciclo de feedback instantáneo elimina el típico ping-pong de "arréglalo" → "¿así?" → "no, así". Claude puede iterar solo hasta que todo funcione perfectamente.
-
-## El poder del proceso iterativo
-
-La clave fue seguir un proceso estructurado pero flexible:
-
-1. **Base sólida primero**: Empezar con `sv create` y un esqueleto funcional
-2. **Funcionalidad antes que forma**: Theme toggle y features básicas antes de perfeccionar
-3. **Iteración constante**: Cada paso construye sobre el anterior
-4. **Contexto como guía**: El conocimiento del proyecto anterior informó cada decisión
-
-No tuve que:
-
-- Escribir CSS desde cero
-- Buscar en documentación
-- Debuggear errores de compilación
-- Rehacer trabajo por falta de planificación
-
-El contexto inicial y el proceso estructurado hicieron que todo fluyera naturalmente.
-
-## Lecciones aprendidas
-
-### 1. Context Engineering > Prompt Engineering
-
-La calidad del resultado depende directamente de la calidad del contexto. Un buen contexto inicial del proyecto Gatsby fue más valioso que cualquier prompt elaborado.
-
-### 2. El archivo CLAUDE.md como memoria persistente
-
-El archivo `CLAUDE.md` actúa como la memoria del proyecto:
-
-- Arquitectura y decisiones técnicas
-- Convenciones de código
-- Objetivos y restricciones
-- Comandos importantes
-
-Este archivo es el puente entre sesiones, permitiendo que cualquier instancia de Claude entienda inmediatamente el proyecto.
-
-### 3. Feedback loops automáticos
-
-Con Playwright, Claude no solo escribe código - lo valida. Puede navegar, hacer clic, verificar que todo funcione. Es como tener QA integrado en el proceso de desarrollo.
-
-### 4. Iteración rápida
-
-La combinación de contexto rico + feedback automático permite iteraciones rapidísimas. Los cambios se validan al instante.
-
-### 5. Diseño emergente
-
-En lugar de planificar cada detalle, dejé que el diseño emergiera de la conversación. El resultado fue más orgánico y coherente.
-
-## Stack técnico final
-
-- **Framework**: SvelteKit con Svelte 5
-- **Estilos**: Tailwind CSS v4 + CSS personalizado
-- **Contenido**: MDsveX para Markdown
-- **Fuentes**: Inter de Google Fonts
-- **Deploy**: Listo para Vercel/Cloudflare
-
-## El código más importante
-
-El cambio más significativo no fue técnico, sino conceptual. Este fragmento del nuevo CSS captura la esencia:
-
-```css
-/* Light mode - Minimalist monochrome with blue accent */
---background: #ffffff;
---foreground: #111111;
---primary: #0066cc;
-
-/* Dark mode - True black with improved contrast */
-.dark {
-	--background: #000000;
-	--foreground: #ffffff;
-	--primary: #4d94ff;
-}
+```
+"Explora toda la estructura del proyecto Gatsby.
+Entiende cómo funciona el blog.
+Documenta tus hallazgos.
+Genera un plan de migración."
 ```
 
-Simplicidad y contraste. Eso resume todo el proyecto.
+Claude no solo leyó archivos. Entendió:
 
-## El futuro del desarrollo: Context-First
+- La arquitectura del proyecto
+- Las convenciones de código
+- Los patrones de diseño
+- Las decisiones técnicas implícitas
 
-Este proyecto demostró que el futuro del desarrollo con IA no está en escribir mejores prompts, sino en construir mejores contextos. Es un cambio fundamental:
+### Paso 2: El contexto como guía
 
-- **Antes**: "¿Cómo le pido a la IA que haga X?"
-- **Ahora**: "¿Cómo le doy a la IA el contexto necesario para entender X?"
+Con este conocimiento profundo, cada decisión posterior fue informada y coherente. No tuve que explicar:
 
-## ¿Qué sigue?
+- Qué estructura de carpetas usar
+- Cómo nombrar los componentes
+- Qué librerías preferir
+- Cómo organizar los estilos
 
-Este sitio es ahora la base para compartir mi viaje construyendo productos SaaS con IA. Cada semana publicaré sobre:
+Claude ya lo sabía por el contexto.
 
-- Implementaciones prácticas con LLMs
-- Arquitecturas SaaS modernas
-- Lecciones de emprendimiento
-- Y por supuesto, más sobre Context Engineering
+### Paso 3: Validación automática
 
-Todo empezó con darle a Claude el contexto correcto.
+Aquí viene la parte revolucionaria. Con Playwright integrado, Claude no solo escribió código, lo validó:
+
+```javascript
+// Claude navegó al sitio
+// Verificó cada enlace
+// Detectó un 404
+// Creó la página faltante
+// Verificó de nuevo
+// Todo en una sola iteración
+```
+
+No hubo ping-pong. No hubo "prueba esto". Claude iteró automáticamente hasta que todo funcionó.
+
+## El poder del feedback instantáneo
+
+La integración con Playwright cambió todo. Claude puede:
+
+1. **Ver lo que construye** - Navega como un usuario real
+2. **Detectar problemas** - Encuentra errores antes que tú
+3. **Autocorregirse** - Itera sin intervención humana
+4. **Validar el resultado** - Confirma que todo funciona
+
+Esto no es solo automatización. Es un cambio fundamental en cómo la IA entiende y valida su propio trabajo.
+
+## Resultados concretos
+
+En una sola sesión:
+
+- Migración completa de Gatsby a SvelteKit
+- Sistema de temas con transiciones suaves
+- Blog con búsqueda, filtros y tags
+- Diseño minimalista coherente
+- Cero bugs, cero iteraciones manuales
+
+Pero el verdadero resultado fue el cambio de mentalidad.
+
+## El archivo CLAUDE.md: Memoria persistente
+
+El contexto no muere con la sesión. El archivo `CLAUDE.md` actúa como memoria del proyecto:
+
+```markdown
+## Arquitectura
+
+- SvelteKit con Svelte 5 (runas)
+- MDsveX para Markdown
+- Tailwind CSS v4
+
+## Convenciones
+
+- Componentes en /src/lib/components
+- Posts en /src/posts
+- Rutas españolas (/articulos, /sobre-mi)
+
+## Comandos
+
+bun run dev
+bun run build
+bun run check
+```
+
+Cualquier instancia futura de Claude entiende inmediatamente el proyecto.
+
+## Lecciones clave
+
+### 1. El contexto es todo
+
+No necesitas prompts perfectos. Necesitas contexto perfecto. La diferencia:
+
+**Prompt Engineering:**
+
+```
+"Crea un componente de tarjeta para blog posts con título,
+fecha, extracto, tags, modo oscuro, transiciones suaves,
+que sea responsive y siga las mejores prácticas de accesibilidad"
+```
+
+**Context Engineering:**
+
+```
+"Mira cómo están construidos los componentes existentes"
+```
+
+Claude entendió más del segundo que del primero.
+
+### 2. La memoria persistente importa
+
+El archivo CLAUDE.md no es documentación. Es el contexto vivo del proyecto. Cada decisión, cada convención, cada comando útil. Es la diferencia entre empezar de cero cada vez y continuar donde lo dejaste.
+
+### 3. El feedback automático es transformador
+
+Cuando Claude puede ver lo que construye, todo cambia. No es solo sobre encontrar errores. Es sobre entender el impacto real del código. Es la diferencia entre programar a ciegas y programar con los ojos abiertos.
+
+### 4. El proceso emerge del contexto
+
+No planifiqué cada paso. El contexto rico permitió que el proceso emergiera naturalmente:
+
+- El conocimiento de Gatsby informó la estructura de SvelteKit
+- Las convenciones existentes guiaron las nuevas
+- Los patrones del proyecto anterior evolucionaron en el nuevo
+
+## Implicaciones para el futuro
+
+Este cambio de paradigma tiene implicaciones profundas:
+
+### Para desarrolladores
+
+- Invierte más tiempo en construir contexto
+- Documenta decisiones, no solo código
+- Usa herramientas que permitan validación automática
+
+### Para equipos
+
+- El contexto compartido es más valioso que las guías de estilo
+- CLAUDE.md puede ser el nuevo README
+- La IA puede mantener consistencia mejor que los linters
+
+### Para la industria
+
+- Las herramientas evolucionarán hacia context-awareness
+- La documentación se volverá contexto ejecutable
+- El pair programming con IA será la norma
+
+## Un ejemplo real de transformación
+
+Durante la migración, Claude sugirió eliminar complejidad innecesaria. No porque se lo pidiera, sino porque el contexto le mostró que el proyecto original tenía abstracciones prematuras.
+
+El resultado: 40% menos código, 100% más funcionalidad.
+
+## El verdadero poder
+
+Context Engineering no es solo una técnica. Es un cambio de mentalidad:
+
+- De instruir a colaborar
+- De especificar a explorar
+- De controlar a confiar
+
+Cuando le das a la IA el contexto correcto, no necesitas controlar cada detalle. El resultado emerge naturalmente, y suele ser mejor de lo que habrías especificado.
+
+## Próximos pasos
+
+Este descubrimiento cambió cómo construyo software. Ahora cada proyecto empieza con:
+
+1. Construcción meticulosa del contexto
+2. CLAUDE.md desde el día uno
+3. Validación automática integrada
+4. Iteración basada en feedback real
+
+## Conclusión
+
+El futuro del desarrollo con IA no está en escribir mejores instrucciones. Está en construir mejores contextos.
+
+La próxima vez que trabajes con Claude o cualquier IA, no empieces con lo que quieres que haga. Empieza con lo que necesita entender.
+
+El contexto es el nuevo código.
 
 ---
 
-_¿Quieres ver el código? Todo está en [GitHub](https://github.com/edzzn/edissonreinozo.com). ¿Tienes preguntas sobre el proceso? [Contáctame](/contacto)._
+_¿Quieres experimentar Context Engineering? Prueba [Claude Code](https://claude.ai/code). ¿Tienes preguntas? [Hablemos](/contacto)._
