@@ -54,6 +54,7 @@
 	--text-primary: #111111;
 	--text-secondary: #666666;
 	--text-disabled: #999999;
+	--primary-background: #e6f2ff;
 }
 
 .dark {
@@ -83,6 +84,7 @@
 	--text-primary: #ffffff;
 	--text-secondary: #a3a3a3;
 	--text-disabled: #666666;
+	--primary-background: #001a33;
 }
 
 @theme inline {
@@ -117,6 +119,7 @@
 	--color-text-primary: var(--text-primary);
 	--color-text-secondary: var(--text-secondary);
 	--color-text-disabled: var(--text-disabled);
+	--color-primary-background: var(--primary-background);
 
 	/* Typography */
 	--font-sans:
@@ -280,6 +283,18 @@
 	.prose pre {
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
+		max-width: 100%;
+		white-space: pre;
+		word-wrap: normal;
+	}
+
+	.prose pre code {
+		display: block;
+		width: max-content;
+		min-width: 100%;
+		white-space: pre;
+		word-break: normal;
+		overflow-wrap: normal;
 	}
 
 	.prose pre::-webkit-scrollbar {

@@ -1,6 +1,6 @@
 ---
 title: Context Engineering - El nuevo paradigma del desarrollo con IA
-date: 2025-01-18
+date: 2025-07-21
 description: Cómo un cambio de mentalidad transformó por completo la forma de construir software con Claude
 tags: [ai, desarrollo, context-engineering, claude]
 ---
