@@ -12,11 +12,23 @@
 
 <div class="content-container">
 	<section class="py-16 lg:py-24">
-		<h1 class="text-foreground text-gradient mb-6 text-4xl font-bold lg:text-5xl">¡Hola! 👋</h1>
-		<p class="text-muted-foreground max-w-3xl text-lg leading-relaxed lg:text-xl">
-			Bienvenido. Aquí exploro la intersección entre LLMs, desarrollo moderno con SvelteKit y el
-			emprendimiento SaaS.
+		<h1 class="text-foreground text-gradient mb-6 text-4xl font-bold lg:text-5xl">
+			Hola, soy Edisson Reinozo
+		</h1>
+		<p class="text-muted-foreground mb-4 max-w-3xl text-lg leading-relaxed lg:text-xl">
+			Full-stack engineer con ~6 años de experiencia, los últimos 3 en myflorie.com construyendo
+			productos con SvelteKit, TypeScript y Nest.js. Me muevo bien entre frontend y backend, y
+			disfruto los equipos pequeños donde hay mucha autonomía.
 		</p>
+		<p class="text-primary mb-8 font-medium">Open to remote senior roles.</p>
+		<div class="flex flex-wrap gap-4">
+			<a
+				href="/sobre-mi"
+				class="bg-primary text-primary-foreground hover:bg-primary/90 hover-lift inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-all duration-200"
+			>
+				Sobre mí →
+			</a>
+		</div>
 	</section>
 
 	<section class="pb-16 lg:pb-24">

@@ -4,7 +4,7 @@
 
 <SEO
 	title="Sobre mí"
-	description="Desarrollador y emprendedor explorando la intersección entre LLMs, SvelteKit y SaaS"
+	description="Full-stack engineer con ~6 años de experiencia. Actualmente en myflorie.com, buscando mi próximo rol remoto."
 />
 
 <div class="content-container py-16 lg:py-24">
@@ -12,10 +12,57 @@
 		<header class="mb-12">
 			<h1 class="text-foreground mb-6 text-4xl font-bold lg:text-5xl">Sobre mí</h1>
 			<p class="text-muted-foreground text-xl">
-				Desarrollador full-stack enfocado en LLMs y SaaS. <br />
-				Construyendo productos que resuelven problemas reales.
+				Full-stack engineer con ~6 años de experiencia. <br />
+				Actualmente en myflorie.com, buscando mi próximo rol remoto.
 			</p>
 		</header>
+
+		<section class="mb-12">
+			<h2 class="mb-6 text-xl font-semibold">Experiencia</h2>
+			<div class="space-y-6">
+				<div class="border-border rounded-lg border p-6">
+					<div class="mb-1 flex items-start justify-between gap-4">
+						<h3 class="text-foreground font-semibold">Full-Stack Engineer — myflorie.com</h3>
+						<span class="text-muted-foreground shrink-0 text-sm">2022 – presente</span>
+					</div>
+					<div class="mt-3 space-y-2">
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">SvelteKit + TypeScript en frontend, Nest.js en backend — transición desde Vue</span>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">Integración con FHIR / eClinicalWorks para registros médicos electrónicos</span>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">Lideré migración de app nativa a Flutter</span>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">Equipo remoto pequeño, mayoría en Europa</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="border-border rounded-lg border p-6">
+					<div class="mb-1 flex items-start justify-between gap-4">
+						<h3 class="text-foreground font-semibold">Full-Stack Engineer — roles anteriores</h3>
+						<span class="text-muted-foreground shrink-0 text-sm">2019 – 2022</span>
+					</div>
+					<div class="mt-3 space-y-2">
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">React + Redux en aplicaciones web</span>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm">Desarrollo móvil con Flutter</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<div class="mb-12 grid grid-cols-1 gap-12 md:grid-cols-2">
 			<div>
@@ -27,15 +74,19 @@
 					</div>
 					<div class="flex items-center gap-3">
 						<span class="text-primary">→</span>
-						<span class="text-muted-foreground">Supabase / ConvexDB</span>
+						<span class="text-muted-foreground">React + Redux</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<span class="text-primary">→</span>
-						<span class="text-muted-foreground">OpenAI / Anthropic APIs</span>
+						<span class="text-muted-foreground">Nest.js / Node.js</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<span class="text-primary">→</span>
-						<span class="text-muted-foreground">Vercel / Cloudflare</span>
+						<span class="text-muted-foreground">Flutter (mobile)</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<span class="text-primary">→</span>
+						<span class="text-muted-foreground">SQLite / Supabase / Convex</span>
 					</div>
 				</div>
 			</div>
@@ -45,19 +96,15 @@
 				<div class="space-y-3">
 					<div class="flex items-center gap-3">
 						<span class="text-primary">•</span>
-						<span class="text-muted-foreground">Construyendo SaaS con IA</span>
+						<span class="text-muted-foreground">Open to remote senior full-stack roles</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<span class="text-primary">•</span>
-						<span class="text-muted-foreground">Escribiendo cada semana</span>
+						<span class="text-muted-foreground">Building side projects: Ganafy, TotalWA</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<span class="text-primary">•</span>
-						<span class="text-muted-foreground">Explorando RAG systems</span>
-					</div>
-					<div class="flex items-center gap-3">
-						<span class="text-primary">•</span>
-						<span class="text-muted-foreground">Open to collaborate</span>
+						<span class="text-muted-foreground">Escribiendo sobre SvelteKit, LLMs y SaaS</span>
 					</div>
 				</div>
 			</div>
@@ -67,11 +114,21 @@
 			<h2 class="mb-6 text-xl font-semibold">Conecta conmigo</h2>
 			<div class="flex flex-wrap gap-4">
 				<a
+					href="https://www.linkedin.com/in/edzzn/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
+				>
+					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+						<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+					</svg>
+					LinkedIn
+				</a>
+				<a
 					href="https://github.com/edzzn"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2
-				          rounded-lg px-4 py-2 transition-all duration-200"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
 				>
 					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
 						<path
@@ -84,8 +141,7 @@
 					href="https://x.com/edzznr"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2
-				          rounded-lg px-4 py-2 transition-all duration-200"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
 				>
 					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
 						<path
@@ -93,6 +149,16 @@
 						/>
 					</svg>
 					Twitter
+				</a>
+				<a
+					href="/cv.pdf"
+					target="_blank"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
+				>
+					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+					</svg>
+					Descargar CV
 				</a>
 			</div>
 		</section>

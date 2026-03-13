@@ -1,7 +1,7 @@
 <script lang="ts">
 	let {
-		title = 'Edisson Reinozo | LLMs, SvelteKit y SaaS',
-		description = 'Explorando LLMs, desarrollo con SvelteKit y emprendimiento SaaS.',
+		title = 'Edisson Reinozo | Senior Full-Stack Engineer',
+		description = 'Full-stack engineer con ~6 años de experiencia construyendo productos web. Open to remote senior roles.',
 		url = '',
 		image = ''
 	} = $props<{
@@ -11,7 +11,7 @@
 		image?: string;
 	}>();
 
-	const siteTitle = 'Edisson Reinozo | LLMs, SvelteKit y SaaS';
+	const siteTitle = 'Edisson Reinozo | Senior Full-Stack Engineer';
 	const fullTitle = title === siteTitle ? title : title;
 </script>
 
