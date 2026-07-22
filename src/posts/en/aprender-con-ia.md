@@ -46,15 +46,13 @@ There was one escape hatch, a phrase I could say to turn off coaching mode for e
 
 ## The mistake of hiding too much
 
-There's an important nuance here, because the first version of this setup didn't work. At first the coach withheld almost everything. It gave me minimal hints and expected me to derive the rest. For topics I'd already touched, great. But I was starting from zero, and I learned this the hard way: you can't discover on your own a pattern you've never seen.
+At first the coach hid too much. Minimal hints worked for familiar topics, but I couldn't figure out what a ViewSet was if I'd never seen one. That wasn't learning; it was getting stuck.
 
-I was never going to "figure out" what a ViewSet is if I'd never laid eyes on one. Half the time I didn't even know where the line it mentioned was supposed to go, because I had no mental model of where it fit. Asking someone to reinvent an abstraction they don't know exists isn't productive friction, it's just leaving them stuck.
-
-So we course-corrected. The new rule: the first time a pattern shows up, show me plenty, a detailed scaffold right at the spot in the file, what goes there and why. The second time, much less, and I look at my own earlier code as the reference. The help fades as the pattern becomes familiar.
+We changed the rule: the first time, give me a clear explanation and scaffolding in the exact place in the file; the second time, give me less help and let me use my earlier code as a reference. As the pattern became familiar, the help disappeared.
 
 <FadingScaffolding locale="en" />
 
-That's the difference between hiding and coaching. Hiding is withholding information for sport. Coaching is giving you just enough to take the next step yourself, and that "just enough" changes with how much you already know.
+Coaching means giving you enough help to move forward, then reducing it as you learn.
 
 ## It started with books and a plan, not code
 
@@ -82,31 +80,15 @@ It's the difference between being handed a finished puzzle to study for a while,
 
 ## The bugs were the syllabus
 
-Nobody tells you this, but every moment I actually learned something was a failure. Not the happy path. The bugs. And because I was the one writing the code, they were my bugs, which is why fixing them rewired something.
+I already knew backend development. What was new was learning how Django solves problems I already understood.
 
-A few that stuck.
+With `prefetch_related`, for example, I learned how Django avoids N+1 queries and how to verify it using several records. I also discovered that URL versioning passes the version into each view: my custom actions didn't accept that argument and failed, while DRF's built-in views kept working.
 
-**CORS is a browser thing, not an API thing.** My frontend login kept failing with "Failed to fetch." I assumed the API was broken. The coach had me curl the same endpoint, and it came back 200 OK, tokens and all. The API was fine the whole time. The browser was throwing the response away because one header was missing. I will never again confuse "the server rejected it" with "the browser refused to keep it." And what made it stick wasn't the explanation, it was that I predicted "the API is broken" and got to be wrong out loud first.
-
-**A test can pass for the wrong reason.** I added URL versioning, which moved every route under `/api/v1/`. Two of my ownership tests stayed green. Except they asserted a 404, and now they got a 404 because the route no longer existed, not because the security check fired. A false green. My tests were lying to me and looked perfectly healthy doing it. I'd have shipped that without blinking. Watching a green suite hide a real regression taught me more about testing than any post on coverage ever has.
-
-**My "N+1 guard" guarded nothing.** I wrote a test asserting the query count stayed flat, to protect a `prefetch_related`. The coach pointed out my test used one parent record, and the N+1 only shows up with several. With a single course, the query count was identical with or without the optimization. My test would pass even if I deleted the exact thing it existed to protect. We proved it: pulled the prefetch, test still passed. Then I fixed the test to use three records, pulled the prefetch again, and this time it failed, 8 queries instead of 3. That's the moment I actually understood what the query-count assertion is for.
-
-**Turning on versioning broke my custom endpoints.** The version in the URL gets handed to every view as an argument. My hand-written action methods had fixed signatures with no room for it, so they 500'd instantly. The built-in ones swallowed it without complaint. Reading the error myself, and working out why the list endpoint survived while my custom one died, is knowledge I own now instead of knowledge I pasted.
-
-None of these are in a tutorial. They came from building a real thing and being made to sit with the failure instead of having it quietly cleaned up.
+Fixing those errors in code I wrote myself made Django's decisions stop feeling like magic.
 
 ## Knowing where to let the AI drive
 
-Here's the balance that kept this from being miserable. I only guarded the thing I was trying to learn. The goal was DRF, so DRF was off-limits to the AI. Everything else, the React frontend, the config, the throwaway seed data, the styling, I let it rip through as fast as it wanted.
-
-That's not a compromise, it's the actual skill. Learning with AI isn't "do everything the hard way." It's drawing a sharp line around the one thing you want to get good at and being strict on both sides of it. Maximum friction inside the line, maximum leverage outside it. I built the entire frontend in an afternoon, AI-driven, and its only job was to exercise the backend I was actually studying. The frontend was scaffolding for the learning, not the learning.
-
-## Knowing when not to use something
-
-A good coach also talks you out of things. At one point I asked whether I should put gRPC between my frontend and Django. The honest answer I got was that it would be architecture cosplay. gRPC is for service-to-service traffic, browsers can't even speak it natively, and Django fights it the whole way. We talked through when it's the right call (internal microservices) versus when it's just résumé-driven complexity (here). I got more out of the "don't" than I would have from a working gRPC setup I didn't need.
-
-Taste, knowing what not to build, is teachable too. You just have to ask "is this the right tool?" instead of "how do I use this tool?"
+I only protected what I wanted to learn: DRF. The AI could handle the frontend, configuration, seed data, and styling. That kept the difficulty focused on Django while everything else moved quickly.
 
 ## It already had a name: antifragile
 
