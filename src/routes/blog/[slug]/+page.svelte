@@ -2,11 +2,15 @@
 	import type { Component } from 'svelte';
 	import { formatDate } from '$lib/utils';
 	import SEO from '$lib/components/SEO.svelte';
+	import ArticleAudioPlayer from '$lib/components/ArticleAudioPlayer.svelte';
+	import PostCover from '$lib/components/PostCover.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 
 	let { data } = $props<{
 		data: {
 			slug: string;
+			alternatePath: string;
+			hasTranslation: boolean;
 			content: Component;
 			metadata: {
 				title: string;
@@ -23,7 +27,7 @@
 <SEO
 	title={metadata.title}
 	description={metadata.description || `Artículo publicado el ${formatDate(metadata.date)}`}
-	alternatePath={`/en/blog/${data.slug}`}
+	alternatePath={data.hasTranslation ? data.alternatePath : ''}
 />
 
 <div class="content-container">
@@ -51,6 +55,10 @@
 				{/if}
 			</div>
 		</header>
+		<div class="mb-6">
+			<PostCover slug={data.slug} title={metadata.title} locale="es" variant="hero" />
+		</div>
+		<ArticleAudioPlayer src={`/audio/es/${data.slug}.mp3`} title={metadata.title} locale="es" />
 
 		<div class="grid max-w-full grid-cols-1 gap-12 py-8 lg:grid-cols-[minmax(0,1fr)_300px]">
 			<div class="min-w-0 overflow-x-hidden">

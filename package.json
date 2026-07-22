@@ -10,12 +10,18 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"audio:check": "bun scripts/generate-blog-audio.ts --dry-run",
+		"audio:generate": "bun scripts/generate-blog-audio.ts",
+		"image:check": "bun scripts/generate-blog-images.ts --dry-run",
+		"image:generate": "bun scripts/generate-blog-images.ts",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@google-cloud/text-to-speech": "^6.4.1",
+		"@google/genai": "^2.13.0",
 		"@lucide/svelte": "^0.525.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.22.0",
@@ -50,5 +56,9 @@
 	"dependencies": {
 		"lucide-svelte": "^0.525.0",
 		"mode-watcher": "^1.1.0"
-	}
+	},
+	"trustedDependencies": [
+		"@tailwindcss/oxide",
+		"protobufjs"
+	]
 }

@@ -12,7 +12,10 @@
 	let mobileMenuOpen = $state(false);
 	let isEnglish = $derived($page.url.pathname === '/en' || $page.url.pathname.startsWith('/en/'));
 	let locale = $derived(isEnglish ? 'en' : 'es');
-	let languageHref = $derived(localizedPath($page.url.pathname, isEnglish ? 'es' : 'en'));
+	let pageAlternatePath = $derived(($page.data as { alternatePath?: string }).alternatePath);
+	let languageHref = $derived(
+		pageAlternatePath || localizedPath($page.url.pathname, isEnglish ? 'es' : 'en')
+	);
 
 	onMount(() => {
 		const handleScroll = () => {
