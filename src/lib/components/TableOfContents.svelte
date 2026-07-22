@@ -8,6 +8,7 @@
 		children?: TocItem[];
 	}
 
+	let { locale = 'es' } = $props<{ locale?: 'es' | 'en' }>();
 	let activeId = $state<string>('');
 	let headings = $state<TocItem[]>([]);
 
@@ -59,31 +60,6 @@
 		};
 	});
 
-	function buildNestedStructure(items: TocItem[]): TocItem[] {
-		const result: TocItem[] = [];
-		const stack: { item: TocItem; level: number }[] = [];
-
-		items.forEach((item) => {
-			const newItem = { ...item, children: [] };
-
-			while (stack.length > 0 && stack[stack.length - 1].level >= item.level) {
-				stack.pop();
-			}
-
-			if (stack.length === 0) {
-				result.push(newItem);
-			} else {
-				const parent = stack[stack.length - 1].item;
-				if (!parent.children) parent.children = [];
-				parent.children.push(newItem);
-			}
-
-			stack.push({ item: newItem, level: item.level });
-		});
-
-		return result;
-	}
-
 	function scrollToHeading(id: string) {
 		const element = document.getElementById(id);
 		if (element) {
@@ -95,17 +71,13 @@
 			});
 		}
 	}
-
-	function renderTocItems(items: TocItem[]) {
-		return items;
-	}
 </script>
 
 {#if headings.length > 0}
-	<nav class="toc" aria-label="Tabla de contenidos">
-		<h2 class="toc-title">Contenido</h2>
+	<nav class="toc" aria-label={locale === 'en' ? 'Table of contents' : 'Tabla de contenidos'}>
+		<h2 class="toc-title">{locale === 'en' ? 'Contents' : 'Contenido'}</h2>
 		<ul class="toc-list">
-			{#each headings as item}
+			{#each headings as item (item.id)}
 				{@render tocItem(item)}
 			{/each}
 		</ul>
@@ -127,7 +99,7 @@
 		</a>
 		{#if item.children && item.children.length > 0}
 			<ul class="toc-sublist">
-				{#each item.children as child}
+				{#each item.children as child (child.id)}
 					{@render tocItem(child)}
 				{/each}
 			</ul>

@@ -6,6 +6,7 @@
 	import PostCard from '$lib/components/PostCard.svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
 
 	let { data } = $props<{
 		data: {
@@ -49,7 +50,7 @@
 
 	// Actualizar URL cuando cambian los filtros
 	$effect(() => {
-		const params = new URLSearchParams();
+		const params = new SvelteURLSearchParams();
 		if (searchTerm) params.set('q', searchTerm);
 		if (selectedTags.length > 0) params.set('tag', selectedTags[0]);
 
@@ -63,6 +64,7 @@
 <SEO
 	title="Blog"
 	description="Artículos sobre LLMs, desarrollo con SvelteKit, Supabase y emprendimiento SaaS."
+	alternatePath="/en/blog"
 />
 
 <div class="mx-auto max-w-7xl">
@@ -146,7 +148,7 @@
 						</button>
 					{/if}
 
-					{#each selectedTags as tag}
+					{#each selectedTags as tag (tag)}
 						<button
 							type="button"
 							onclick={() => (selectedTags = selectedTags.filter((t) => t !== tag))}
@@ -186,7 +188,7 @@
 			<!-- Lista de artículos -->
 			{#if filteredPosts.length > 0}
 				<div class="space-y-6">
-					{#each filteredPosts as post}
+					{#each filteredPosts as post (post.slug)}
 						<PostCard {post} />
 					{/each}
 				</div>

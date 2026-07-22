@@ -8,7 +8,7 @@
 	const { posts } = data;
 </script>
 
-<SEO />
+<SEO alternatePath="/en" />
 
 <div class="content-container">
 	<section class="py-16 lg:py-24">
@@ -16,9 +16,10 @@
 			Hola, soy Edisson Reinozo
 		</h1>
 		<p class="text-muted-foreground mb-4 max-w-3xl text-lg leading-relaxed lg:text-xl">
-			Full-stack engineer con ~6 años de experiencia, los últimos 3 en myflorie.com construyendo
-			productos con SvelteKit, TypeScript y Nest.js. Me muevo bien entre frontend y backend, y
-			disfruto los equipos pequeños donde hay mucha autonomía.
+			Full-stack engineer con ~6 años de experiencia, los últimos 3+ en myflorie.com construyendo
+			productos con SvelteKit, TypeScript y Nest.js. Me muevo bien entre backend, frontend y mobile
+			(Flutter), y disfruto los equipos pequeños y remotos donde llevo features de la idea a
+			producción en ciclos cortos.
 		</p>
 		<p class="text-primary mb-8 font-medium">Open to remote senior roles.</p>
 		<div class="flex flex-wrap gap-4">
@@ -46,7 +47,7 @@
 
 		{#if posts.length > 0}
 			<div class="space-y-8">
-				{#each posts.slice(0, 5) as post}
+				{#each posts.slice(0, 5) as post (post.slug)}
 					<PostCard {post} />
 				{/each}
 			</div>

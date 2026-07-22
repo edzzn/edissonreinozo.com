@@ -1,11 +1,13 @@
 <script lang="ts">
+	import type { Component } from 'svelte';
 	import { formatDate } from '$lib/utils';
 	import SEO from '$lib/components/SEO.svelte';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 
 	let { data } = $props<{
 		data: {
-			content: any;
+			slug: string;
+			content: Component;
 			metadata: {
 				title: string;
 				date: string;
@@ -21,6 +23,7 @@
 <SEO
 	title={metadata.title}
 	description={metadata.description || `Artículo publicado el ${formatDate(metadata.date)}`}
+	alternatePath={`/en/blog/${data.slug}`}
 />
 
 <div class="content-container">
@@ -34,7 +37,7 @@
 				{#if metadata.tags && metadata.tags.length > 0}
 					<span class="text-sm">•</span>
 					<div class="flex flex-wrap gap-2">
-						{#each metadata.tags as tag}
+						{#each metadata.tags as tag (tag)}
 							<a
 								href="/blog?tag={encodeURIComponent(tag)}"
 								class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center rounded-full
@@ -49,7 +52,7 @@
 			</div>
 		</header>
 
-		<div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-12 py-8 max-w-full">
+		<div class="grid max-w-full grid-cols-1 gap-12 py-8 lg:grid-cols-[minmax(0,1fr)_300px]">
 			<div class="min-w-0 overflow-x-hidden">
 				<div
 					class="prose prose-lg dark:prose-invert prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground
@@ -72,7 +75,9 @@
 				</div>
 			</div>
 
-			<aside class="hidden lg:block lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-10rem)] lg:overflow-y-auto">
+			<aside
+				class="hidden lg:sticky lg:top-20 lg:block lg:max-h-[calc(100vh-10rem)] lg:self-start lg:overflow-y-auto"
+			>
 				<TableOfContents />
 			</aside>
 		</div>

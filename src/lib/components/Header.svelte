@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import { localizedPath } from '$lib/utils';
 	import ThemeToggle from './ThemeToggle.svelte';
 
 	let { title = 'Edisson Reinozo' } = $props<{
@@ -8,6 +10,9 @@
 
 	let scrolled = $state(false);
 	let mobileMenuOpen = $state(false);
+	let isEnglish = $derived($page.url.pathname === '/en' || $page.url.pathname.startsWith('/en/'));
+	let locale = $derived(isEnglish ? 'en' : 'es');
+	let languageHref = $derived(localizedPath($page.url.pathname, isEnglish ? 'es' : 'en'));
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -18,12 +23,21 @@
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 
-	const navLinks = [
-		{ href: '/', label: 'Inicio' },
-		{ href: '/blog', label: 'Blog' },
-		{ href: '/sobre-mi', label: 'Sobre mí' },
-		{ href: '/contacto', label: 'Contacto' }
-	];
+	let navLinks = $derived(
+		isEnglish
+			? [
+					{ href: '/en', label: 'Home' },
+					{ href: '/en/blog', label: 'Blog' },
+					{ href: '/en/about', label: 'About' },
+					{ href: '/en/contact', label: 'Contact' }
+				]
+			: [
+					{ href: '/', label: 'Inicio' },
+					{ href: '/blog', label: 'Blog' },
+					{ href: '/sobre-mi', label: 'Sobre mí' },
+					{ href: '/contacto', label: 'Contacto' }
+				]
+	);
 </script>
 
 <header
@@ -43,7 +57,7 @@
 			<!-- Desktop Navigation -->
 			<div class="hidden items-center gap-8 md:flex">
 				<ul class="flex items-center gap-8">
-					{#each navLinks as link}
+					{#each navLinks as link (link.href)}
 						<li>
 							<a
 								href={link.href}
@@ -59,16 +73,34 @@
 						</li>
 					{/each}
 				</ul>
+				<a
+					href={languageHref}
+					hreflang={isEnglish ? 'es' : 'en'}
+					lang={isEnglish ? 'es' : 'en'}
+					class="border-border text-muted-foreground hover:border-primary hover:text-primary rounded-full border px-3 py-1.5 text-xs font-semibold tracking-wide transition-colors"
+					aria-label={isEnglish ? 'Ver sitio en español' : 'View site in English'}
+				>
+					{isEnglish ? 'ES' : 'EN'}
+				</a>
 				<ThemeToggle />
 			</div>
 
 			<!-- Mobile Menu Button and Theme Toggle -->
 			<div class="flex items-center gap-3 md:hidden">
+				<a
+					href={languageHref}
+					hreflang={isEnglish ? 'es' : 'en'}
+					lang={isEnglish ? 'es' : 'en'}
+					class="border-border text-muted-foreground hover:text-primary rounded-full border px-2.5 py-1 text-xs font-semibold"
+					aria-label={isEnglish ? 'Ver sitio en español' : 'View site in English'}
+				>
+					{isEnglish ? 'ES' : 'EN'}
+				</a>
 				<ThemeToggle />
 				<button
 					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 					class="text-foreground hover:text-primary -mr-2 p-2 transition-colors"
-					aria-label="Toggle menu"
+					aria-label={locale === 'en' ? 'Toggle menu' : 'Abrir o cerrar menú'}
 				>
 					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						{#if mobileMenuOpen}
@@ -95,7 +127,7 @@
 		{#if mobileMenuOpen}
 			<div class="border-border border-t py-4 md:hidden">
 				<ul class="space-y-3">
-					{#each navLinks as link}
+					{#each navLinks as link (link.href)}
 						<li>
 							<a
 								href={link.href}

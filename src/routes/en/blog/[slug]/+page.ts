@@ -3,18 +3,14 @@ import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
 	try {
-		const post = await import(`../../../posts/${params.slug}.md`);
-
+		const post = await import(`../../../../posts/en/${params.slug}.md`);
 		return {
 			slug: params.slug,
 			content: post.default,
-			metadata: {
-				...post.metadata,
-				tags: post.metadata?.tags || []
-			}
+			metadata: { ...post.metadata, tags: post.metadata?.tags || [] }
 		};
 	} catch {
-		error(404, `No se encontró el artículo: ${params.slug}`);
+		error(404, `Article not found: ${params.slug}`);
 	}
 };
 

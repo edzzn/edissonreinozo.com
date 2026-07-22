@@ -4,7 +4,8 @@
 
 <SEO
 	title="Sobre mí"
-	description="Full-stack engineer con ~6 años de experiencia. Actualmente en myflorie.com, buscando mi próximo rol remoto."
+	description="Senior full-stack engineer con ~6 años de experiencia, los últimos 3+ en Florie. SvelteKit, Nest.js y Flutter, con integraciones complejas de salud (FHIR/ECW). Buscando mi próximo rol remoto."
+	alternatePath="/en/about"
 />
 
 <div class="content-container py-16 lg:py-24">
@@ -12,8 +13,16 @@
 		<header class="mb-12">
 			<h1 class="text-foreground mb-6 text-4xl font-bold lg:text-5xl">Sobre mí</h1>
 			<p class="text-muted-foreground text-xl">
-				Full-stack engineer con ~6 años de experiencia. <br />
-				Actualmente en myflorie.com, buscando mi próximo rol remoto.
+				Senior full-stack engineer con ~6 años de experiencia, los últimos 3+ en Florie. <br />
+				Actualmente buscando mi próximo rol remoto.
+			</p>
+			<p class="text-muted-foreground mt-6 leading-relaxed">
+				Trabajo de punta a punta: desde la lógica de backend hasta el frontend, incluyendo mobile
+				con Flutter. Buen fundamento en React/Redux y Vue de proyectos anteriores, y hoy
+				principalmente en SvelteKit y Nest.js. Me siento cómodo siendo dueño de features de
+				principio a fin en equipos pequeños y remotos, llevando ideas de concepto a producción en
+				ciclos cortos. Tengo experiencia con integraciones complejas del sector salud (FHIR/ECW) y
+				liderando transiciones técnicas (Vue → SvelteKit, nativo → Flutter).
 			</p>
 		</header>
 
@@ -28,19 +37,33 @@
 					<div class="mt-3 space-y-2">
 						<div class="flex items-start gap-3">
 							<span class="text-primary mt-1">→</span>
-							<span class="text-muted-foreground text-sm">SvelteKit + TypeScript en frontend, Nest.js en backend — transición desde Vue</span>
+							<span class="text-muted-foreground text-sm"
+								>SvelteKit + TypeScript en frontend, Nest.js en backend — transición desde Vue</span
+							>
 						</div>
 						<div class="flex items-start gap-3">
 							<span class="text-primary mt-1">→</span>
-							<span class="text-muted-foreground text-sm">Integración con FHIR / eClinicalWorks para registros médicos electrónicos</span>
+							<span class="text-muted-foreground text-sm"
+								>Integración con FHIR / eClinicalWorks para registros médicos electrónicos</span
+							>
 						</div>
 						<div class="flex items-start gap-3">
 							<span class="text-primary mt-1">→</span>
-							<span class="text-muted-foreground text-sm">Lideré migración de app nativa a Flutter</span>
+							<span class="text-muted-foreground text-sm"
+								>Lideré migración de app nativa a Flutter</span
+							>
 						</div>
 						<div class="flex items-start gap-3">
 							<span class="text-primary mt-1">→</span>
-							<span class="text-muted-foreground text-sm">Equipo remoto pequeño, mayoría en Europa</span>
+							<span class="text-muted-foreground text-sm"
+								>Ownership de features end-to-end: de concepto a producción en ciclos cortos</span
+							>
+						</div>
+						<div class="flex items-start gap-3">
+							<span class="text-primary mt-1">→</span>
+							<span class="text-muted-foreground text-sm"
+								>Equipo remoto pequeño, mayoría en Europa</span
+							>
 						</div>
 					</div>
 				</div>
@@ -120,7 +143,9 @@
 					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
 				>
 					<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-						<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+						<path
+							d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+						/>
 					</svg>
 					LinkedIn
 				</a>
@@ -156,7 +181,12 @@
 					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
 				>
 					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+						/>
 					</svg>
 					Descargar CV
 				</a>

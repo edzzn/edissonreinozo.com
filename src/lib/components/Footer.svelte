@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	const currentYear = new Date().getFullYear();
+	let isEnglish = $derived($page.url.pathname === '/en' || $page.url.pathname.startsWith('/en/'));
 
 	const socialLinks = [
 		{
@@ -25,9 +28,7 @@
 		}
 	];
 
-	const footerLinks = [
-		{ href: '/blog', label: 'Blog' }
-	];
+	let footerLinks = $derived([{ href: isEnglish ? '/en/blog' : '/blog', label: 'Blog' }]);
 </script>
 
 <footer class="border-border mt-auto border-t">
@@ -37,7 +38,7 @@
 			<div class="flex flex-col items-center gap-6 sm:flex-row">
 				<span class="text-foreground font-medium">Edisson Reinozo</span>
 				<nav class="flex items-center gap-6">
-					{#each footerLinks as link}
+					{#each footerLinks as link (link.href)}
 						<a
 							href={link.href}
 							class="text-muted-foreground hover:text-foreground text-sm transition-colors"
@@ -50,7 +51,7 @@
 
 			<!-- Right side: Social links -->
 			<div class="flex items-center gap-4">
-				{#each socialLinks as social}
+				{#each socialLinks as social (social.href)}
 					<a
 						href={social.href}
 						target="_blank"
@@ -58,6 +59,7 @@
 						class="text-muted-foreground hover:text-foreground transition-colors"
 						aria-label={social.label}
 					>
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{@html social.icon}
 					</a>
 				{/each}
@@ -67,7 +69,7 @@
 		<!-- Copyright -->
 		<div class="mt-6 text-center sm:text-left">
 			<p class="text-muted-foreground text-xs">
-				© {currentYear} • Construido con
+				© {currentYear} • {isEnglish ? 'Built with' : 'Construido con'}
 				<a
 					href="https://kit.svelte.dev"
 					class="text-primary hover:underline"

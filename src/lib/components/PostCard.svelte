@@ -2,7 +2,8 @@
 	import type { Post } from '$lib/types';
 	import { formatDate } from '$lib/utils';
 
-	let { post } = $props<{ post: Post }>();
+	let { post, locale = 'es' } = $props<{ post: Post; locale?: 'es' | 'en' }>();
+	let basePath = $derived(locale === 'en' ? '/en/blog' : '/blog');
 </script>
 
 <article
@@ -10,20 +11,20 @@
 >
 	<h3 class="mb-2 text-xl font-semibold">
 		<a
-			href="/blog/{post.slug}"
+			href="{basePath}/{post.slug}"
 			class="text-foreground hover:text-primary inline-block transition-colors"
 		>
 			{post.title}
 		</a>
 	</h3>
 	<div class="text-muted-foreground mb-3 flex items-center gap-2 text-sm">
-		<time>{formatDate(post.date)}</time>
+		<time>{formatDate(post.date, locale)}</time>
 		{#if post.tags && post.tags.length > 0}
 			<span>•</span>
 			<div class="flex flex-wrap gap-2">
-				{#each post.tags as tag}
+				{#each post.tags as tag (tag)}
 					<a
-						href="/blog?tag={encodeURIComponent(tag)}"
+						href="{basePath}?tag={encodeURIComponent(tag)}"
 						class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center rounded-full
 						       px-2.5 py-0.5 text-xs font-medium
 						       transition-all duration-200 hover:scale-105"

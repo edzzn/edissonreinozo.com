@@ -1,7 +1,12 @@
 <script lang="ts">
-	let { value = $bindable(''), placeholder = 'Buscar artículos...' } = $props<{
+	let {
+		value = $bindable(''),
+		placeholder = 'Buscar artículos...',
+		locale = 'es'
+	} = $props<{
 		value?: string;
 		placeholder?: string;
+		locale?: 'es' | 'en';
 	}>();
 </script>
 
@@ -32,7 +37,7 @@
 			type="button"
 			onclick={() => (value = '')}
 			class="text-muted-foreground hover:text-foreground absolute inset-y-0 right-0 flex items-center pr-3"
-			aria-label="Clear search"
+			aria-label={locale === 'en' ? 'Clear search' : 'Limpiar búsqueda'}
 		>
 			<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path

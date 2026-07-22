@@ -1,14 +1,18 @@
 <script lang="ts">
 	let {
 		title = 'Edisson Reinozo | Senior Full-Stack Engineer',
-		description = 'Full-stack engineer con ~6 años de experiencia construyendo productos web. Open to remote senior roles.',
+		description = 'Full-stack engineer con ~6 años de experiencia construyendo productos web end-to-end con SvelteKit, Nest.js y Flutter. Open to remote senior roles.',
 		url = '',
-		image = ''
+		image = '',
+		locale = 'es',
+		alternatePath = ''
 	} = $props<{
 		title?: string;
 		description?: string;
 		url?: string;
 		image?: string;
+		locale?: 'es' | 'en';
+		alternatePath?: string;
 	}>();
 
 	const siteTitle = 'Edisson Reinozo | Senior Full-Stack Engineer';
@@ -18,6 +22,10 @@
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
+	<meta property="og:locale" content={locale === 'en' ? 'en_US' : 'es_ES'} />
+	{#if alternatePath}
+		<link rel="alternate" hreflang={locale === 'en' ? 'es' : 'en'} href={alternatePath} />
+	{/if}
 
 	<!-- Open Graph -->
 	<meta property="og:title" content={fullTitle} />

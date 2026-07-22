@@ -2,11 +2,13 @@
 	let {
 		tags = [],
 		selectedTags = $bindable([]),
-		tagCounts = {}
+		tagCounts = {},
+		locale = 'es'
 	} = $props<{
 		tags?: string[];
 		selectedTags?: string[];
 		tagCounts?: Record<string, number>;
+		locale?: 'es' | 'en';
 	}>();
 
 	function toggleTag(tag: string) {
@@ -19,9 +21,9 @@
 </script>
 
 <div class="space-y-3">
-	<h3 class="text-foreground font-semibold">Etiquetas</h3>
+	<h3 class="text-foreground font-semibold">{locale === 'en' ? 'Tags' : 'Etiquetas'}</h3>
 	<div class="space-y-2">
-		{#each tags as tag}
+		{#each tags as tag (tag)}
 			<button
 				type="button"
 				onclick={() => toggleTag(tag)}
@@ -50,7 +52,7 @@
 			onclick={() => (selectedTags = [])}
 			class="text-primary hover:text-primary/80 text-sm"
 		>
-			Limpiar filtros
+			{locale === 'en' ? 'Clear filters' : 'Limpiar filtros'}
 		</button>
 	{/if}
 </div>

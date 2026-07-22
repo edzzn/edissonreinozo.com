@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Edisson Reinozo — CV</title>
+<style>
+  :root {
+    --accent: #2f6fdb;
+    --accent-dark: #1c4ea0;
+    --ink: #1c2024;
+    --muted: #6b7280;
+    --sidebar-bg: #f4f7fb;
+    --rule: #dde3ec;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 10px;
+    line-height: 1.46;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+
+  /* Top banner */
+  .banner { padding: 30px 40px 18px; border-bottom: 3px solid var(--accent); }
+  h1 { font-size: 27px; margin: 0; letter-spacing: -0.4px; }
+  .title { color: var(--accent); font-size: 12.5px; font-weight: 600; margin-top: 3px; letter-spacing: 0.2px; }
+  .tagline { color: var(--muted); font-size: 10px; margin-top: 5px; }
+
+  /* Body grid */
+  .grid { display: grid; grid-template-columns: 215px 1fr; }
+  .sidebar { background: var(--sidebar-bg); padding: 22px 22px 30px; }
+  .main { padding: 22px 30px 30px; }
+
+  h2 {
+    color: var(--accent-dark);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  .main h2 { padding-bottom: 4px; border-bottom: 1.5px solid var(--rule); }
+  .block { margin-bottom: 18px; }
+  .sidebar .block { margin-bottom: 20px; }
+
+  /* Sidebar items */
+  .contact-row { margin: 0 0 4px; word-break: break-word; }
+  .contact-row .lbl { display: block; color: var(--muted); font-size: 8.6px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .skill-group { margin-bottom: 7px; }
+  .skill-group .k { font-weight: 700; font-size: 9.4px; }
+  .skill-group .v { color: #3a4350; }
+  .edu-item { margin-bottom: 8px; }
+  .edu-item .deg { font-weight: 600; }
+  .edu-item .meta { color: var(--muted); font-size: 9.2px; }
+  .lang-row { display: flex; justify-content: space-between; margin-bottom: 2px; }
+  .lang-row .lvl { color: var(--muted); }
+
+  /* Experience */
+  .entry { margin-bottom: 13px; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .role { font-weight: 700; font-size: 11px; }
+  .role .co { color: var(--accent); }
+  .dates { color: var(--muted); font-size: 9.4px; white-space: nowrap; }
+  .place { color: var(--muted); font-size: 9.2px; margin: 0 0 4px; }
+  ul { margin: 0; padding-left: 15px; }
+  li { margin: 2px 0; }
+  li::marker { color: var(--accent); }
+
+  .proj { margin-bottom: 8px; }
+  .proj .pname { font-weight: 700; }
+  .proj .pname a { color: var(--ink); }
+  .proj .desc { color: #3a4350; }
+
+  @page { margin: 0; size: letter; }
+</style>
+</head>
+<body>
+
+  <div class="banner">
+    <h1>Edisson Reinozo</h1>
+    <div class="title">Full Stack Software Engineer</div>
+    <div class="tagline">6 years building products end-to-end · SvelteKit · Nest.js · Flutter · Remote</div>
+  </div>
+
+  <div class="grid">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="block">
+        <h2>Contact</h2>
+        <div class="contact-row"><span class="lbl">Location</span>Cuenca, Ecuador</div>
+        <div class="contact-row"><span class="lbl">Email</span>edisson350@gmail.com</div>
+        <div class="contact-row"><span class="lbl">Web</span><a href="https://edissonreinozo.com">edissonreinozo.com</a></div>
+        <div class="contact-row"><span class="lbl">GitHub</span><a href="https://github.com/edzzn">github.com/edzzn</a></div>
+        <div class="contact-row"><span class="lbl">LinkedIn</span><a href="https://linkedin.com/in/edzzn">linkedin.com/in/edzzn</a></div>
+      </div>
+
+      <div class="block">
+        <h2>Skills</h2>
+        <div class="skill-group"><div class="k">Languages</div><div class="v">TypeScript, JavaScript, Python, Dart</div></div>
+        <div class="skill-group"><div class="k">Frontend</div><div class="v">SvelteKit, React, Vue, Tailwind CSS</div></div>
+        <div class="skill-group"><div class="k">Backend</div><div class="v">Nest.js, Node.js, FastAPI</div></div>
+        <div class="skill-group"><div class="k">Mobile</div><div class="v">Flutter</div></div>
+        <div class="skill-group"><div class="k">Databases</div><div class="v">PostgreSQL, SQLite, Convex</div></div>
+        <div class="skill-group"><div class="k">Integrations</div><div class="v">FHIR, REST APIs, Apple/Google Wallet</div></div>
+        <div class="skill-group"><div class="k">Tools</div><div class="v">Git, Linear, Docker, AI-assisted dev</div></div>
+      </div>
+
+      <div class="block">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <div class="deg">Systems Engineering</div>
+          <div class="meta">Universidad de Cuenca · 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="deg">Deep Learning Fundamentals</div>
+          <div class="meta">Udacity Nanodegree · 2017</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Languages</h2>
+        <div class="lang-row"><span>Spanish</span><span class="lvl">Native</span></div>
+        <div class="lang-row"><span>English</span><span class="lvl">Professional</span></div>
+        <div class="lang-row"><span>German</span><span class="lvl">Basic</span></div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div class="block">
+        <h2>Profile</h2>
+        <p style="margin:0;">Full stack engineer with 6 years of experience, the last 3+ years at Florie shipping across a SvelteKit frontend, Nest.js backend, and Flutter mobile. I own features end-to-end in small, remote teams — taking ideas from concept to production in short cycles. Proven at high-stakes integration work (FHIR medical data) and leading technical transitions (Vue → SvelteKit, native → Flutter).</p>
+      </div>
+
+      <div class="block">
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role"><span class="co">Florie</span> — Software Engineer</span>
+            <span class="dates">Nov 2022 – Present</span>
+          </div>
+          <div class="place">Remote · Europe-based team</div>
+          <ul>
+            <li>Own features end-to-end across a SvelteKit frontend and Nest.js backend, from concept to production</li>
+            <li>Led the migration of native iOS/Android apps to a single Flutter codebase, speeding up release cycles and removing duplicated platform code</li>
+            <li>Built FHIR medical integrations with ECW — high-stakes work demanding precise state and data sync</li>
+            <li>Drove the web UI migration from Vue to SvelteKit as part of a stack modernization</li>
+            <li>Keep the Flutter mobile apps continuously in sync with the core product</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role"><span class="co">Bauer DeutschAkademie</span> — Software Developer</span>
+            <span class="dates">Jun 2021 – Nov 2022</span>
+          </div>
+          <div class="place">Remote</div>
+          <ul>
+            <li>Built a React.js system for managing course-completion certificates</li>
+            <li>Handled WordPress administration and SEO optimization</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role"><span class="co">Solbicon</span> — Software Engineer (Freelance)</span>
+            <span class="dates">Jun 2020 – Nov 2020</span>
+          </div>
+          <div class="place">Cuenca, Ecuador</div>
+          <ul>
+            <li>Built a real estate portal from the ground up</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="role"><span class="co">TangoCode Inc.</span> — Software Engineer</span>
+            <span class="dates">Feb 2019 – Mar 2020</span>
+          </div>
+          <div class="place">Cuenca, Ecuador</div>
+          <ul>
+            <li>Developed components for a React/Redux web application</li>
+            <li>Wrote data-recovery and task-automation scripts; QA automation with Selenium</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2>Side Projects</h2>
+        <div class="proj">
+          <div class="pname"><a href="https://ganafy.com">Ganafy.com</a></div>
+          <div class="desc">Digital loyalty platform for Ecuador SMBs — stamp cards via Apple/Google Wallet. SvelteKit, with RBAC, analytics dashboard, QR validation, and push notifications.</div>
+        </div>
+        <div class="proj">
+          <div class="pname">Total WA Ecosystem</div>
+          <div class="desc">Suite of WhatsApp business tools: wsp.chat link-shortener SaaS, a Chrome extension for contact export, and the totalwa.com landing page (Astro).</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

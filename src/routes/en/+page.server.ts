@@ -1,7 +1,7 @@
 import type { Post } from '$lib/types';
 
 export async function load() {
-	const posts = import.meta.glob('/src/posts/*.md', { eager: true });
+	const posts = import.meta.glob('/src/posts/en/*.md', { eager: true });
 
 	const processedPosts = Object.entries(posts)
 		.map(([path, module]) => {
@@ -11,7 +11,7 @@ export async function load() {
 
 			return {
 				slug,
-				title: metadata.title || 'Sin título',
+				title: metadata.title || 'Untitled',
 				date: metadata.date || '',
 				description: metadata.description || '',
 				published: metadata.published !== false,
@@ -21,9 +21,7 @@ export async function load() {
 		.filter((post) => post.published)
 		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-	return {
-		posts: processedPosts
-	};
+	return { posts: processedPosts };
 }
 
 export const prerender = true;
