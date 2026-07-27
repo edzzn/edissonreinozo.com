@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Edisson Reinozo — CV</title>
+<style>
+  :root {
+    --ink: #000;
+    --rule: #000;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  @page { size: letter; margin: 0.38in 0.5in; }
+  body {
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    font-size: 10.9px;
+    line-height: 1.26;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: #000; text-decoration: underline; text-underline-offset: 1.5px; }
+
+  /* ---- Encabezado ---- */
+  .name {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 1.05;
+    margin: 0 0 2px;
+  }
+  .contact {
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 1px;
+  }
+  .contact .sep { padding: 0 4px; }
+
+  /* ---- Secciones: título al margen, contenido indentado ---- */
+  h2 {
+    font-size: 12.7px;
+    font-weight: 400;
+    font-variant: small-caps;
+    letter-spacing: 0.4px;
+    line-height: 1.15;
+    margin: 4.5px 0 0;
+    padding-bottom: 0.5px;
+    border-bottom: 0.8px solid var(--rule);
+  }
+  .body { padding-left: 10px; }
+
+  /* ---- Filas de entradas ---- */
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 3px;
+  }
+  .row .left { padding-right: 8px; }
+  .row .right { white-space: nowrap; font-style: italic; }
+  .sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-style: italic;
+  }
+  .sub .left { padding-right: 8px; }
+  .sub .right { white-space: nowrap; }
+  b, strong { font-weight: 700; }
+
+  ul { margin: 0.5px 0 0; padding-left: 12px; }
+  li { margin: 0.5px 0; padding-left: 1px; }
+  li::marker { font-size: 9px; }
+
+  .kv div { margin: 1px 0; }
+  p { margin: 2px 0 0; text-align: justify; }
+</style>
+</head>
+<body>
+
+<div class="name">Edisson Reinozo</div>
+<div class="contact">
+  | Cuenca, Ecuador <span class="sep">|</span> <a href="mailto:edisson350@gmail.com">edisson350@gmail.com</a> <span class="sep">|</span>
+  <a href="https://linkedin.com/in/edzzn">linkedin.com/in/edzzn</a> <span class="sep">|</span>
+  <a href="https://github.com/edzzn">github.com/edzzn</a> <span class="sep">|</span>
+  <a href="https://edissonreinozo.com">edissonreinozo.com</a> <span class="sep">|</span>
+</div>
+
+<h2>Perfil</h2>
+<div class="body">
+<p>
+  Ingeniero de software full-stack con <b>6 a&ntilde;os</b> construyendo y lanzando productos de punta a punta, los
+  &uacute;ltimos 3+ en una startup europea de healthtech. Soy responsable de funcionalidades completas &mdash;
+  del modelo de datos a la interfaz en producci&oacute;n &mdash; en equipos remotos peque&ntilde;os: dise&ntilde;o de APIs,
+  modelado de datos, interfaces, rendimiento y despliegue. Trabajo <b>AI-first</b>, usando Claude Code y herramientas
+  agénticas a diario con los tests como ciclo de verificaci&oacute;n. Experiencia comprobada en <b>productos 0&rarr;1</b>:
+  dos productos propios con usuarios reales, adem&aacute;s de integraciones cr&iacute;ticas de
+  <b>datos m&eacute;dicos FHIR</b> y dos migraciones de plataforma lideradas de principio a fin.
+</p>
+</div>
+
+<h2>Habilidades T&eacute;cnicas</h2>
+<div class="body kv">
+  <div><b>Lenguajes:</b> TypeScript, JavaScript, Python, Dart, SQL, HTML/CSS</div>
+  <div><b>Frontend:</b> SvelteKit, React, Next.js, Vue, Tailwind CSS, dise&ntilde;o responsivo</div>
+  <div><b>Backend:</b> Node.js, Nest.js, Express, FastAPI, dise&ntilde;o de APIs REST</div>
+  <div><b>Datos y Cloud:</b> PostgreSQL, SQLite, Convex, AWS (m&uacute;ltiples servicios), Docker, GitHub Actions CI/CD</div>
+  <div><b>M&oacute;vil:</b> Flutter, Dart, pipelines de release nativos iOS/Android</div>
+  <div><b>Testing y Herramientas:</b> Playwright, Selenium, Git, Linear, Figma, Claude Code / desarrollo asistido por IA</div>
+  <div><b>Integraciones:</b> FHIR (historias cl&iacute;nicas), Apple y Google Wallet, WhatsApp Business</div>
+</div>
+
+<h2>Experiencia Profesional</h2>
+<div class="body">
+
+<div class="row">
+  <div class="left"><b>Ingeniero de Software</b>, Full Stack</div>
+  <div class="right">Nov. 2022 &ndash; Presente</div>
+</div>
+<div class="sub">
+  <div class="left">Florie &mdash; startup de healthtech</div>
+  <div class="right">Remoto, con base en Europa</div>
+</div>
+<ul>
+  <li>Responsable de funcionalidades <b>de punta a punta</b> sobre un frontend en <b>SvelteKit</b> y un backend en <b>Nest.js</b>, desde el concepto hasta producci&oacute;n en ciclos cortos.</li>
+  <li>Construí <b>integraciones de historias cl&iacute;nicas FHIR</b> con ECW &mdash; trabajo cr&iacute;tico que exige manejo preciso de estado y sincronizaci&oacute;n de datos de salud regulados.</li>
+  <li>Lider&eacute; la migraci&oacute;n de las apps nativas iOS/Android a <b>una sola base de c&oacute;digo en Flutter</b>, acelerando los ciclos de release y eliminando c&oacute;digo duplicado por plataforma.</li>
+  <li>Impuls&eacute; la migraci&oacute;n de la interfaz web de <b>Vue a SvelteKit</b> como parte de una modernizaci&oacute;n del stack, manteniendo las apps Flutter sincronizadas con el producto principal.</li>
+  <li>Trabajo <b>AI-first</b> a diario: planifico, implemento, testeo y reviso mi propio c&oacute;digo con <b>Claude Code</b>, usando <b>Playwright</b> y tests unitarios/de integraci&oacute;n como ciclo de verificaci&oacute;n.</li>
+</ul>
+
+<div class="row">
+  <div class="left"><b>Desarrollador de Software</b></div>
+  <div class="right">Jun. 2021 &ndash; Nov. 2022</div>
+</div>
+<div class="sub">
+  <div class="left">Bauer DeutschAkademie &mdash; educaci&oacute;n</div>
+  <div class="right">Remoto</div>
+</div>
+<ul>
+  <li>Desarroll&eacute; un sistema en <b>React.js</b> para gestionar y emitir certificados de finalizaci&oacute;n de cursos.</li>
+  <li>Administr&eacute; WordPress y realic&eacute; <b>optimizaci&oacute;n SEO</b> en los sitios web p&uacute;blicos.</li>
+</ul>
+
+<div class="row">
+  <div class="left"><b>Ingeniero de Software</b> (Freelance)</div>
+  <div class="right">Jun. 2020 &ndash; Nov. 2020</div>
+</div>
+<div class="sub">
+  <div class="left">Solbicon &mdash; sector inmobiliario</div>
+  <div class="right">Cuenca, Ecuador</div>
+</div>
+<ul>
+  <li>Dise&ntilde;&eacute; y lanc&eacute; un <b>portal inmobiliario desde cero</b> como &uacute;nico ingeniero, a cargo de la arquitectura y la entrega.</li>
+</ul>
+
+<div class="row">
+  <div class="left"><b>Ingeniero de Software</b></div>
+  <div class="right">Feb. 2019 &ndash; Mar. 2020</div>
+</div>
+<div class="sub">
+  <div class="left">TangoCode Inc. &mdash; consultora de software</div>
+  <div class="right">Cuenca, Ecuador</div>
+</div>
+<ul>
+  <li>Desarroll&eacute; componentes para una aplicaci&oacute;n web en <b>React/Redux</b> para un cliente en Estados Unidos.</li>
+  <li>Escrib&iacute; scripts de recuperaci&oacute;n de datos y automatizaci&oacute;n de tareas; constru&iacute; <b>automatizaci&oacute;n de QA con Selenium</b>.</li>
+</ul>
+
+</div>
+
+<h2>Productos que he Construido y Lanzado</h2>
+<div class="body">
+
+<div class="row">
+  <div class="left"><b>Ganafy</b> &mdash; plataforma de fidelizaci&oacute;n digital para PYMEs <span style="font-style:italic">| SvelteKit, Nest.js, PostgreSQL</span></div>
+  <div class="right">2023 &ndash; Presente</div>
+</div>
+<ul>
+  <li>Constru&iacute; y <b>opero en solitario</b> una plataforma de fidelizaci&oacute;n usada por peque&ntilde;os negocios ecuatorianos reales: tarjetas de sellos entregadas como <b>pases de Apple y Google Wallet</b>, de modo que la tarjeta vive en el celular del cliente en lugar de detr&aacute;s de un login.</li>
+  <li>Incluye <b>dashboard de anal&iacute;ticas, control de acceso por roles</b>, validaci&oacute;n por QR y notificaciones push; redise&ntilde;&eacute; el onboarding como un asistente que lleva a un negocio nuevo desde el registro hasta su tarjeta activa en <b>menos de tres minutos</b>.</li>
+</ul>
+
+<div class="row">
+  <div class="left"><b>Ecosistema Total WA</b> &mdash; herramientas de WhatsApp para negocios <span style="font-style:italic">| Svelte, TypeScript, Astro</span></div>
+  <div class="right">2023 &ndash; Presente</div>
+</div>
+<ul>
+  <li>Conjunto de herramientas que incluye <b>wsp.chat</b>, un SaaS acortador de enlaces, una <b>extensi&oacute;n de Chrome</b> para exportar contactos y la landing de totalwa.com.</li>
+</ul>
+
+<div class="row">
+  <div class="left"><b>autovideo</b> &mdash; editor de video basado en transcripci&oacute;n <span style="font-style:italic">| Rust, Tauri 2, SvelteKit, whisper.cpp, ffmpeg</span></div>
+  <div class="right">2026</div>
+</div>
+<ul>
+  <li>App de macOS que edita video <b>borrando frases de su transcripci&oacute;n</b>. Funciona <b>100% en local</b> &mdash; Whisper acelerado con Metal m&aacute;s ffmpeg, sin subir el material del usuario a terceros &mdash; con un pipeline tipado y testeable de forma independiente. <a href="https://github.com/edzzn/autovideo">github.com/edzzn/autovideo</a></li>
+</ul>
+
+</div>
+
+<h2>Formaci&oacute;n</h2>
+<div class="body">
+<div class="row">
+  <div class="left"><b>Universidad de Cuenca</b> &mdash; Ingenier&iacute;a de Sistemas</div>
+  <div class="right">Cuenca, Ecuador</div>
+</div>
+<div class="row">
+  <div class="left"><b>Udacity</b> &mdash; Nanodegree en Fundamentos de Deep Learning</div>
+  <div class="right">En l&iacute;nea</div>
+</div>
+</div>
+
+<h2>Publicaciones e Idiomas</h2>
+<div class="body kv">
+  <div><b>Publicaciones:</b> Ensayos sobre pr&aacute;ctica de ingenier&iacute;a asistida por IA en <a href="https://edissonreinozo.com/blog">edissonreinozo.com/blog</a> &mdash; c&oacute;mo limitar la IA a pistas y andamiaje al aprender un framework nuevo, y un m&eacute;todo de ingenier&iacute;a de contexto para reconstruir un sitio en producci&oacute;n.</div>
+  <div><b>Idiomas:</b> Espa&ntilde;ol (nativo) &middot; Ingl&eacute;s (profesional) &middot; Alem&aacute;n (b&aacute;sico)</div>
+</div>
+
+</body>
+</html>
