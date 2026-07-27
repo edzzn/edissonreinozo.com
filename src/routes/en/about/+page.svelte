@@ -102,11 +102,18 @@
 					</a>
 				{/each}
 				<a
-					href="/cv.pdf"
+					href="/cv-v2.pdf"
 					target="_blank"
 					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center rounded-lg px-4 py-2 transition-all duration-200"
 				>
 					Download CV
+				</a>
+				<a
+					href="/cv-v2-es.pdf"
+					target="_blank"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center rounded-lg px-4 py-2 transition-all duration-200"
+				>
+					CV en español
 				</a>
 			</div>
 		</section>

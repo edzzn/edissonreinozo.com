@@ -176,7 +176,7 @@
 					Twitter
 				</a>
 				<a
-					href="/cv.pdf"
+					href="/cv-v2-es.pdf"
 					target="_blank"
 					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
 				>
@@ -189,6 +189,21 @@
 						/>
 					</svg>
 					Descargar CV
+				</a>
+				<a
+					href="/cv-v2.pdf"
+					target="_blank"
+					class="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all duration-200"
+				>
+					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+						/>
+					</svg>
+					CV in English
 				</a>
 			</div>
 		</section>
