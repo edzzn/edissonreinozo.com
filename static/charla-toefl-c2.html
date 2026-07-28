@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo alcanzar un nivel C2 en el examen TOEFL — Edisson Reinozo</title>
+<meta name="description" content="Cómo saqué 118/120 (C2) en el TOEFL iBT en once días: el método, las plantillas, la logística y el error que me costó 29 dólares. Charla para la comunidad JavaScript Ecuador.">
+<style>
+  :root{
+    --bg:#0a0912; --card:#1a1730; --card2:#231f3d; --code:#141225;
+    --violet:#8b5cf6; --magenta:#d946ef; --cyan:#22d3ee;
+    --white:#fff; --muted:#a9a3c7; --dim:#6f6890;
+    --green:#5be49b; --red:#f87171;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--white);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px}
+  a{color:var(--cyan)}
+  a:hover{color:var(--magenta)}
+
+  header{
+    padding:82px 0 60px;
+    background:
+      radial-gradient(900px 520px at 82% 18%, rgba(139,92,246,.32), transparent 62%),
+      radial-gradient(700px 420px at 12% 88%, rgba(217,70,239,.20), transparent 60%);
+    border-bottom:1px solid #1d1a33;
+  }
+  .eyebrow{
+    display:inline-block;border:1px solid #4b4370;border-radius:99px;
+    padding:6px 16px;font-size:11.5px;letter-spacing:.16em;font-weight:700;color:#cfc9ea;
+    text-transform:uppercase;
+  }
+  h1{font-size:clamp(30px,5.6vw,50px);line-height:1.08;margin:22px 0 14px;letter-spacing:-.02em}
+  .byline{color:var(--muted);font-size:16px;margin:0}
+  .byline strong{color:var(--white)}
+
+  .score{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .score div{background:var(--card);border-radius:12px;padding:16px 20px;min-width:104px}
+  .score b{display:block;font-size:27px;line-height:1.1}
+  .score span{font-size:12.5px;color:var(--muted)}
+  .score .big b{font-size:38px;color:var(--white)}
+  .score .big{background:linear-gradient(135deg,#2a1c52,#1a1730)}
+
+  section{padding:52px 0;border-bottom:1px solid #17152a}
+  section:last-of-type{border-bottom:0}
+  h2{font-size:clamp(21px,3.3vw,28px);margin:0 0 8px;letter-spacing:-.01em}
+  h2 + .sub{color:var(--muted);margin:0 0 26px;font-size:15px}
+  h3{font-size:16.5px;margin:26px 0 8px;color:var(--cyan)}
+  p{margin:0 0 15px}
+  .lead{font-size:19px;font-weight:600;line-height:1.5}
+
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+  .box{background:var(--card);border-radius:12px;padding:18px 20px}
+  .box:nth-child(even){background:var(--card2)}
+  .box h4{margin:0 0 7px;font-size:15.5px;color:var(--cyan)}
+  .box:nth-child(2n) h4{color:var(--violet)}
+  .box:nth-child(3n) h4{color:var(--magenta)}
+  .box p{margin:0;font-size:14px;color:var(--muted)}
+
+  ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding:12px 0 12px 44px;border-bottom:1px solid #1c1932}
+  ol.steps li:last-child{border-bottom:0}
+  ol.steps li::before{
+    content:counter(s);position:absolute;left:0;top:11px;
+    width:27px;height:27px;border-radius:50%;background:var(--violet);color:#0a0912;
+    font-weight:800;font-size:13.5px;display:grid;place-items:center;
+  }
+  ol.steps b{display:block;font-size:15.5px}
+  ol.steps span{color:var(--muted);font-size:14px}
+
+  pre{
+    background:var(--code);border-radius:12px;padding:20px;overflow-x:auto;
+    font:13.5px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    color:#d9d4f0;margin:0 0 15px;
+  }
+
+  .legend{display:flex;gap:22px;flex-wrap:wrap;margin:0 0 14px;font-size:13.5px;font-weight:600}
+  .legend i{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:7px}
+  .email{background:var(--code);border-radius:12px;padding:24px;line-height:1.95;font-size:15.5px}
+  .fx{color:var(--cyan);font-weight:600}
+  .ct{color:var(--white)}
+  .takeaway{
+    background:linear-gradient(135deg,#3b1046,#241033);border-radius:12px;
+    padding:18px 20px;font-weight:700;font-size:16.5px;margin-top:18px;
+  }
+  .takeaway em{color:var(--magenta);font-style:normal}
+
+  .cols{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .used,.notused{border-radius:12px;padding:18px 20px}
+  .used{background:#14261e}.notused{background:#2a1622}
+  .used h4{color:var(--green);margin:0 0 10px;letter-spacing:.1em;font-size:12.5px}
+  .notused h4{color:var(--red);margin:0 0 10px;letter-spacing:.1em;font-size:12.5px}
+  .used ul,.notused ul{margin:0;padding-left:19px;font-size:14.5px;color:#d7e8de}
+  .notused ul{color:#edd7e2}
+  .used li,.notused li{margin-bottom:7px}
+
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:15px}
+  th{text-align:left;color:var(--dim);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:0 10px 9px 0;font-weight:700}
+  td{padding:11px 10px 11px 0;border-top:1px solid #1c1932;vertical-align:top}
+  td:first-child{font-weight:700;color:var(--cyan);white-space:nowrap}
+
+  .note{background:var(--card2);border-radius:12px;padding:16px 20px;font-size:14.5px;color:var(--muted)}
+  .note b{color:var(--white)}
+  .plan{display:grid;gap:11px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .plan div{background:var(--card);border-radius:11px;padding:14px 16px}
+  .plan div:last-child{background:#3b1046}
+  .plan b{color:var(--cyan);font-size:14px;display:block;margin-bottom:4px}
+  .plan div:last-child b{color:var(--magenta)}
+  .plan span{font-size:13.5px;color:var(--muted)}
+
+  footer{padding:48px 0 70px;color:var(--dim);font-size:14px}
+  footer a{font-weight:600}
+
+  /* ================= PRESENT BUTTON ================= */
+  .presentbtn{
+    position:fixed;top:16px;right:16px;z-index:60;
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--violet);color:#0a0912;border:0;border-radius:99px;
+    padding:11px 20px;font-family:inherit;font-size:14px;font-weight:800;
+    cursor:pointer;box-shadow:0 8px 26px rgba(139,92,246,.38);
+  }
+  .presentbtn:hover{background:var(--magenta)}
+  .presentbtn::before{content:"";width:0;height:0;border-style:solid;
+    border-width:6px 0 6px 10px;border-color:transparent transparent transparent #0a0912}
+  @media print{.presentbtn{display:none}}
+  @media (max-width:640px){.presentbtn{top:12px;right:12px;padding:9px 16px;font-size:13px}}
+
+  /* ================= DECK ================= */
+  #deck{display:none}
+  body.presenting{overflow:hidden}
+  body.presenting>header,body.presenting>.wrap,body.presenting>footer,body.presenting .presentbtn{display:none}
+  body.presenting #deck{position:fixed;inset:0;background:#000;z-index:80;display:grid;place-items:center}
+
+  #stage{position:relative;width:var(--sw);height:var(--sh);background:var(--bg);overflow:hidden}
+  .slide{
+    position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden;
+    padding:calc(var(--u)*5.2);font-size:calc(var(--u)*1.55);line-height:1.5;
+  }
+  .slide.on{display:flex}
+  .slide.mid{justify-content:center}
+  .slide .eyebrow{align-self:flex-start;font-size:calc(var(--u)*1.15);
+    padding:calc(var(--u)*.55) calc(var(--u)*1.5);border-color:#4b4370}
+
+  .st{font-size:calc(var(--u)*3.5);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:0}
+  .ss{font-size:calc(var(--u)*1.5);color:var(--muted);font-style:italic;margin:calc(var(--u)*.7) 0 0}
+  .sbody{margin-top:calc(var(--u)*2.4);flex:1;min-height:0}
+  .slead{font-size:calc(var(--u)*3.0);font-weight:800;line-height:1.25;letter-spacing:-.015em;margin:0}
+  .slead.dimc{color:var(--muted)}
+  .slead.mag{color:var(--magenta)}
+  .sfoot{font-size:calc(var(--u)*1.55);font-weight:700;margin-top:calc(var(--u)*1.5)}
+  .sfoot.mag{color:var(--magenta)}
+  .sfine{font-size:calc(var(--u)*1.15);color:var(--dim);font-style:italic;margin-top:calc(var(--u)*1.1)}
+
+  .sgrid{display:grid;gap:calc(var(--u)*1.4)}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .sc{background:var(--card);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.5) calc(var(--u)*1.6)}
+  .sc:nth-child(even){background:var(--card2)}
+  .sc h4{margin:0 0 calc(var(--u)*.55);font-size:calc(var(--u)*1.65);color:var(--cyan)}
+  .sc.v h4{color:var(--violet)}
+  .sc.m h4{color:var(--magenta)}
+  .sc p{margin:0;font-size:calc(var(--u)*1.32);color:var(--muted);line-height:1.45}
+  .sc .num{display:grid;place-items:center;width:calc(var(--u)*2.9);height:calc(var(--u)*2.9);
+    border-radius:50%;background:var(--cyan);color:#0a0912;font-weight:800;
+    font-size:calc(var(--u)*1.45);margin-bottom:calc(var(--u)*.9)}
+  .sc.v .num{background:var(--violet)}
+  .sc.m .num{background:var(--magenta)}
+
+  .srow{background:var(--card);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.15) calc(var(--u)*1.6);
+    display:flex;gap:calc(var(--u)*1.3);align-items:flex-start;margin-bottom:calc(var(--u)*1)}
+  .srow:nth-child(even){background:var(--card2)}
+  .srow .num{flex:0 0 auto;display:grid;place-items:center;width:calc(var(--u)*2.6);height:calc(var(--u)*2.6);
+    border-radius:50%;background:var(--violet);color:#0a0912;font-weight:800;font-size:calc(var(--u)*1.35)}
+  .srow b{display:block;font-size:calc(var(--u)*1.65)}
+  .srow span{font-size:calc(var(--u)*1.32);color:var(--muted)}
+
+  .sband{background:#1b2e3f;border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.25) calc(var(--u)*1.7);
+    font-size:calc(var(--u)*1.48);margin-top:calc(var(--u)*1.4)}
+  .sband.mag{background:#3b1046}
+  .sband b{color:var(--cyan)}
+  .sband.mag b{color:var(--magenta)}
+
+  .stable{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.32)}
+  .stable th{font-size:calc(var(--u)*1.02);color:var(--dim);letter-spacing:.1em;
+    padding:0 calc(var(--u)*.8) calc(var(--u)*.85) 0;text-align:left}
+  .stable td{padding:calc(var(--u)*1.05) calc(var(--u)*.8);border-top:1px solid #24203c;vertical-align:middle}
+  .stable td:first-child{font-weight:800;color:var(--cyan);font-size:calc(var(--u)*1.55);white-space:nowrap;padding-left:0}
+  .stable td.n{font-weight:800;color:#fff;font-size:calc(var(--u)*1.55);text-align:center}
+
+  .sbig{font-size:calc(var(--u)*10);font-weight:800;line-height:1;letter-spacing:-.03em}
+  .schip{display:inline-block;background:var(--violet);color:#0a0912;font-weight:800;
+    border-radius:99px;padding:calc(var(--u)*.45) calc(var(--u)*1.5);font-size:calc(var(--u)*1.6)}
+  .sband2{font-size:calc(var(--u)*3.3);font-weight:800;line-height:1}
+
+  .spre{background:var(--code);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.5);
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:calc(var(--u)*1.12);line-height:1.7;color:#d9d4f0;white-space:pre;margin:0;overflow:hidden}
+  .semail{background:var(--code);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.7);
+    font-size:calc(var(--u)*1.6);line-height:2}
+  .sleg{display:flex;gap:calc(var(--u)*3);font-size:calc(var(--u)*1.28);font-weight:700;margin-bottom:calc(var(--u)*1.1)}
+  .sleg i{width:calc(var(--u)*.8);height:calc(var(--u)*.8);border-radius:50%;
+    display:inline-block;margin-right:calc(var(--u)*.65)}
+
+  .scols{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.4)}
+  .scols>div{border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1.5) calc(var(--u)*1.7)}
+  .scols .u{background:#14261e}
+  .scols .x{background:#2a1622}
+  .scols h4{margin:0 0 calc(var(--u)*.9);font-size:calc(var(--u)*1.22);letter-spacing:.12em}
+  .scols .u h4{color:var(--green)}
+  .scols .x h4{color:var(--red)}
+  .scols ul{margin:0;padding-left:calc(var(--u)*1.7);font-size:calc(var(--u)*1.38)}
+  .scols .u ul{color:#d7e8de}
+  .scols .x ul{color:#edd7e2}
+  .scols li{margin-bottom:calc(var(--u)*.65)}
+
+  #hud{position:fixed;right:16px;bottom:14px;z-index:90;color:var(--dim);
+    font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+  #bar{position:fixed;left:0;bottom:0;height:3px;width:0;background:var(--magenta);z-index:92;transition:width .18s}
+  #hint{position:fixed;left:16px;bottom:14px;z-index:90;color:var(--dim);font-size:13px;transition:opacity .6s}
+  #cue{position:fixed;left:0;right:0;bottom:0;z-index:94;display:none;background:#12101f;
+    border-top:1px solid #2a2545;padding:14px 22px 20px;font-size:15px;line-height:1.55;color:var(--muted)}
+  #cue b{color:var(--cyan);display:block;margin-bottom:4px;font-size:12px;letter-spacing:.1em}
+  body.cues #cue{display:block}
+</style>
+</head>
+<body>
+
+<button class="presentbtn" id="presentbtn" type="button">Presentar</button>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Comunidad JavaScript Ecuador · 30 de julio de 2026</span>
+    <h1>Cómo alcanzar un nivel C2 en el examen TOEFL</h1>
+    <p class="byline"><strong>Edisson Reinozo</strong> — Senior Full-Stack Engineer</p>
+    <div class="score">
+      <div class="big"><b>118</b><span>de 120 · C2</span></div>
+      <div><b>6.0</b><span>Reading</span></div>
+      <div><b>6.0</b><span>Listening</span></div>
+      <div><b>5.5</b><span>Writing</span></div>
+      <div><b>5.5</b><span>Speaking</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <p class="lead">Llevo seis años escribiendo código, docs y PRs en inglés. En un examen cronometrado, eso cuenta poquísimo.</p>
+  <p>Me registré el 16 de junio de 2026 y rendí el 27. Once días, unas quince horas de estudio. Después del examen me escribieron varias personas preguntando cómo lo hice, y esta página es esa respuesta ordenada.</p>
+  <p>La idea central de todo lo que sigue: <strong>el TOEFL no mide tu inglés, mide qué tan bien ejecutas un formato bajo reloj.</strong> Es la diferencia entre saber programar y resolver un ejercicio en veinte minutos.</p>
+</section>
+
+<section>
+  <h2>¿Qué es el TOEFL iBT?</h2>
+  <p class="sub">Contexto rápido, por si nunca lo has mirado.</p>
+  <div class="grid">
+    <div class="box"><h4>Un examen de inglés académico</h4><p>Lo hace ETS. Mide leer, escuchar, escribir y hablar en contexto universitario, no inglés conversacional.</p></div>
+    <div class="box"><h4>iBT = Internet-Based Test</h4><p>Todo por computadora, en un centro autorizado o en tu casa con un proctor humano en vivo.</p></div>
+    <div class="box"><h4>¿Para qué sirve?</h4><p>Universidades sobre todo, también procesos migratorios, y como prueba de nivel en un CV.</p></div>
+    <div class="box"><h4>¿Qué te dan?</h4><p>Una banda de 1 a 6 por sección más el puntaje 0–120. Vale dos años.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px"><b>¿Y si no piensas aplicar a una universidad?</b> Sirve igual: es un número verificable, que no es lo mismo que poner “inglés avanzado” en el CV.</div>
+</section>
+
+<section>
+  <h2>Cómo es el examen hoy</h2>
+  <p class="sub">Según la especificación oficial de ETS. Unos 90 minutos de examen, cita de ~2 horas, sin pausas.</p>
+  <table>
+    <tr><th>Sección</th><th>Tipos de tarea</th><th>Ítems</th><th>Tiempo</th></tr>
+    <tr><td>Reading</td><td>Complete the Words · Read in Daily Life · Read an Academic Passage</td><td>50</td><td>~30 min</td></tr>
+    <tr><td>Listening</td><td>Listen and Choose a Response · Conversation · Announcement · Academic Talk</td><td>47</td><td>~29 min</td></tr>
+    <tr><td>Writing</td><td>Build a Sentence · Write an Email · Write for an Academic Discussion</td><td>12</td><td>23 min</td></tr>
+    <tr><td>Speaking</td><td>Listen and Repeat · Take an Interview</td><td>11</td><td>8 min</td></tr>
+  </table>
+  <div class="takeaway"><em>Ojo:</em> el examen cambió el 21 de enero de 2026. Reading y Listening ahora son adaptativos por etapas, la escala pasó a 1–6, y hay tipos de tarea que antes no existían. Buena parte del material gratis que hay en internet es del formato anterior: revisa la fecha antes de estudiar con algo.</div>
+</section>
+
+<section>
+  <h2>Regla número uno: la rúbrica antes que el contenido</h2>
+  <p>Saber cómo te califican importa más que tu nivel de inglés, y es lo que casi nadie hace. Es leer el spec antes de escribir el código.</p>
+  <ol class="steps">
+    <li><b>Cada tarea premia cosas concretas</b><span>Estructura, desarrollo de la idea, precisión, uso del tiempo. No “sonar bonito”.</span></li>
+    <li><b>Los puntos se pierden por omisión</b><span>Casi nunca es un error de gramática. Es una parte de la tarea que no cumpliste.</span></li>
+    <li><b>Los criterios son públicos</b><span>Están en la documentación oficial. Leerlos toma veinte minutos.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Mi stack de preparación</h2>
+  <p class="sub">Tres cosas, en orden de impacto. No hubo una cuarta: no compré libros ni tomé curso.</p>
+  <ol class="steps">
+    <li><b>TST Prep</b><span>Canal de YouTube y tests de práctica gratuitos. Lo lleva un ex-calificador del examen, así que explica el criterio y no solo la respuesta. Tienen curso pagado, pero no lo tomé y no puedo opinar sobre él.</span></li>
+    <li><b>Un loop de feedback con IA</b><span>Le doy la guía oficial del examen, respondo con cronómetro, pido calificación y corrijo. Fue el 80 % de mi práctica de Writing y Speaking.</span></li>
+    <li><b>Plantillas memorizadas</b><span>Una estructura fija por tipo de tarea, para no gastar el reloj inventando el esqueleto.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>El loop de Writing</h2>
+  <ol class="steps">
+    <li><b>Escribir</b><span>Con cronómetro y en el tiempo real de la tarea. El reloj es parte de lo que estás practicando.</span></li>
+    <li><b>Calificar</b><span>Con la guía oficial cargada, pido nota por criterio. No “¿está bien?”.</span></li>
+    <li><b>Diagnosticar</b><span>Nunca “mejóralo”. La pregunta es: ¿dónde exactamente perdí puntos y por qué?</span></li>
+    <li><b>Repetir</b><span>La misma tarea otra vez, hasta que ese error deja de aparecer.</span></li>
+  </ol>
+  <div class="note" style="margin-top:18px"><b>Es un ciclo de TDD.</b> Test rojo, arreglo, verde. Lo que cambia es que el feedback llega en treinta segundos en vez de esperar a un profesor.</div>
+</section>
+
+<section>
+  <h2>El loop de Speaking</h2>
+  <p class="sub">El mismo ciclo, más un paso y una variante que funcionó mejor.</p>
+  <ol class="steps">
+    <li><b>Grabar</b><span>Con el celular, usando las prácticas de TST Prep y respetando los tiempos reales.</span></li>
+    <li><b>Transcribir</b><span>Lo que dijiste, tal cual. Si lo arreglas al pasarlo a texto, borraste el dato.</span></li>
+    <li><b>Calificar</b><span>Estructura, muletillas, ritmo y uso del tiempo.</span></li>
+    <li><b>Repetir</b><span>Hasta que el esqueleto de la respuesta sea automático.</span></li>
+  </ol>
+  <h3>Lo que más me sirvió: llamadas de voz con la IA</h3>
+  <p>Grabar y transcribir funciona pero es lento. Le expliqué el formato una sola vez y después practiqué <strong>hablando</strong>, en llamada de voz, en vez de escribiendo. Ahí ya no estás redactando: estás hablando bajo presión, que es exactamente lo que mide el examen, y el feedback llega al terminar sin transcribir nada a mano.</p>
+  <h3>Un truco del día del examen</h3>
+  <p>En la tarea de repetir (<em>Listen and Repeat</em>) me sirvió mucho tomar apuntes. Puedes usar papel durante todo el examen y casi nadie lo aprovecha ahí, porque parece que es solo de memoria. Anotar palabras clave mientras escuchas te salva la segunda mitad de las oraciones largas.</p>
+</section>
+
+<section>
+  <h2>Cómo le pedí ayuda a la IA</h2>
+  <p class="sub">Reconstruido: la idea, no las palabras exactas.</p>
+<pre>[adjunto: la guía oficial del examen, en PDF]
+
+Con base en esta guía, genérame preguntas
+de práctica para [tipo de tarea].
+
+Cuando te dé mi respuesta:
+1. Califícala con los criterios de la guía.
+2. Dime dónde perdí puntos y por qué.
+3. Dame los tres arreglos de mayor impacto.
+
+No reescribas mi respuesta.</pre>
+  <div class="grid">
+    <div class="box"><h4>Súbele el documento oficial</h4><p>Eso es lo que cambia todo. Sin la guía, califica con criterio inventado: suena convincente y no sirve.</p></div>
+    <div class="box"><h4>Pide preguntas por tipo de tarea</h4><p>Una a una, no un simulacro entero. Así practicas dirigido.</p></div>
+    <div class="box"><h4>No dejes que reescriba</h4><p>Si reescribe, te devuelve un texto perfecto que no escribiste tú y no aprendiste nada.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px"><b>El prompt importa menos de lo que parece.</b> Lo que importa es que la IA tenga la guía oficial y que tú escribas la respuesta. Truco extra: pídele que además prediga la nota — cuando su predicción y tu propia sensación coinciden, ya calibraste el criterio.</div>
+</section>
+
+<section>
+  <h2>Plantillas: no es trampa, es la estructura esperada</h2>
+  <p class="lead">Piensa en un correo. Todos empiezan igual y terminan igual, y tienen las mismas partes. Lo único que cambia es el medio.</p>
+  <p>El examen tiene una tarea que es literalmente escribir un correo, <em>Write an Email</em>. Un escenario, tres cosas que tienes que cubrir, y unos siete minutos. Por ejemplo:</p>
+  <div class="note"><b>Tarea de ejemplo.</b> Trabajas en un proyecto grupal de un curso. Un compañero no ha estado participando y ha faltado a varias entregas. Escríbele un correo donde describas el avance del proyecto, expliques cómo su ausencia afecta al grupo y propongas cómo puede contribuir.</div>
+
+  <h3>El esqueleto, siempre el mismo</h3>
+  <ol class="steps">
+    <li><b>Saludo y a quién le escribes</b></li>
+    <li><b>Por qué escribes, en una línea</b></li>
+    <li><b>El detalle o la razón, con un ejemplo</b></li>
+    <li><b>Lo que pides o lo que propones</b></li>
+    <li><b>Cierre corto y agradecimiento</b></li>
+  </ol>
+
+  <h3>El mismo correo: lo que se repite y lo que cambia</h3>
+  <div class="legend">
+    <span><i style="background:var(--cyan)"></i>Se repite en todos los correos</span>
+    <span><i style="background:#fff"></i>Lo único que tienes que pensar</span>
+  </div>
+  <div class="email">
+    <span class="fx">Hi Alex,</span><br><br>
+    <span class="fx">I’m writing about </span><span class="ct">our group project.</span><br>
+    <span class="fx">Right now </span><span class="ct">we’ve finished the research and the first draft, and we present next week.</span><br><br>
+    <span class="fx">The problem is that </span><span class="ct">your parts haven’t come in, so the rest of us covered them and we fell behind.</span><br><br>
+    <span class="fx">Would you be able to </span><span class="ct">take the data section and send it by Friday? </span><span class="fx">If that doesn’t work, tell me what does.</span><br><br>
+    <span class="fx">Thanks, and let me know how you’d like to handle it.</span><br>
+    <span class="fx">Best, Edisson</span>
+  </div>
+  <div class="takeaway"><em>Casi la mitad del correo es estructura.</em> Esa mitad la puedes tener automática antes de entrar al examen, y gastar el reloj solo en la otra.</div>
+  <p style="margin-top:18px">El mismo principio en las otras tareas. <strong>Discusión académica:</strong> postura clara de entrada, una razón, un ejemplo concreto, reconocer el otro lado en una línea, cerrar volviendo a la postura. <strong>Al hablar:</strong> respuesta directa primero, la razón, un ejemplo, una línea de cierre — nunca arrancar con “bueno, es una pregunta interesante”, que son segundos que no tienes.</p>
+  <p>No memorices la plantilla de un video: constrúyela con la guía oficial y con tus propias correcciones. Una que no practicaste con cronómetro no la vas a recordar.</p>
+</section>
+
+<section>
+  <h2>En qué gasté mi tiempo, y en qué no</h2>
+  <p class="sub">Un solo caso, el mío, y ya trabajaba en inglés a diario. No es una receta.</p>
+  <div class="cols">
+    <div class="used">
+      <h4>LO QUE USÉ</h4>
+      <ul>
+        <li>Leí la guía y los criterios oficiales</li>
+        <li>Hice simulacros completos y cronometrados</li>
+        <li>El loop de feedback con IA</li>
+        <li>Drills de Speaking, cortos pero diarios</li>
+        <li>Mis propias abreviaturas para tomar notas</li>
+      </ul>
+    </div>
+    <div class="notused">
+      <h4>LO QUE NO USÉ</h4>
+      <ul>
+        <li>Apps de vocabulario</li>
+        <li>Libros de gramática</li>
+        <li>Cursos pagados</li>
+        <li>Meses de estudio</li>
+        <li>Material anterior al formato de 2026</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:18px">Mi cuello de botella era el formato, no el idioma. Si el tuyo es distinto, la columna de la izquierda cambia. No copies mi lista: copia el método de averiguar cuál es tu propio cuello de botella, que es el simulacro diagnóstico del día 1.</p>
+</section>
+
+<section>
+  <h2>Logística desde Ecuador</h2>
+  <p class="sub">Números de mis recibos de junio y julio de 2026. Verifica los actuales, cambian.</p>
+  <div class="grid">
+    <div class="box"><h4>USD 230</h4><p>Lo que pagué. Mismo precio en centro o en casa.</p></div>
+    <div class="box"><h4>Home Edition</h4><p>En tu casa con un proctor humano en vivo. Ahorra el viaje a Quito o Guayaquil.</p></div>
+    <div class="box"><h4>Prueba el equipo primero</h4><p>Corre el equipment check dos o tres veces, a distintas horas, ANTES de pagar.</p></div>
+    <div class="box"><h4>4 envíos gratis</h4><p>Solo si eliges las instituciones al registrarte. Después son USD 29 por reporte.</p></div>
+    <div class="box"><h4>Validez 2 años</h4><p>Aplica a todo lo que puedas dentro de esa ventana.</p></div>
+    <div class="box"><h4>Sin pausas</h4><p>Noventa minutos seguidos. Come y ve al baño antes.</p></div>
+  </div>
+  <div class="takeaway"><em>Mi error:</em> no elegí las instituciones al registrarme. Enviar el puntaje después me costó USD 29 extra.</div>
+  <p style="margin-top:18px">La lección vale más que los 29 dólares: yo estaba resolviendo “rendir el examen” cuando el problema real era “hacer llegar un puntaje a una universidad”. El examen era un paso, no el objetivo. Cuando optimizas el paso equivocado, pagas el recargo. No es plata que me arruine, es plata que era gratis diez días antes.</p>
+</section>
+
+<section>
+  <h2>Un plan de diez días</h2>
+  <p class="sub">Me registré el 16 de junio y rendí el 27. Once días, unas quince horas.</p>
+  <div class="plan">
+    <div><b>Día 1</b><span>Simulacro diagnóstico completo y cronometrado. Sin estudiar nada antes.</span></div>
+    <div><b>Días 2–3</b><span>Drill de Speaking. Una hora diaria, grabando y calificando.</span></div>
+    <div><b>Día 4</b><span>Writing. Tres respuestas completas con el loop.</span></div>
+    <div><b>Día 5</b><span>Listening tomando notas con tus propias abreviaturas.</span></div>
+    <div><b>Día 6</b><span>Segundo simulacro completo.</span></div>
+    <div><b>Día 7</b><span>Solo tu sección más débil, según el simulacro.</span></div>
+    <div><b>Día 8</b><span>Un drill final de Speaking y uno de Writing.</span></div>
+    <div><b>Día 9</b><span>Repaso liviano, equipment check, preparar el espacio.</span></div>
+    <div><b>Día 10</b><span>Examen.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Tres ideas para llevarse</h2>
+  <ol class="steps">
+    <li><b>No estudies inglés. Estudia el formato.</b><span>Vale sobre todo si ya trabajas en inglés todos los días.</span></li>
+    <li><b>Consigue feedback rápido y contra la rúbrica.</b><span>Rápido para poder iterar, contra la rúbrica para que sea el criterio real.</span></li>
+    <li><b>Automatiza la estructura.</b><span>Para gastar el reloj en contenido y no en decidir cómo empezar.</span></li>
+  </ol>
+  <div class="takeaway"><em>118 de 120 no fue nivel de inglés.</em> Fue tratar el examen como un problema de ingeniería.</div>
+</section>
+
+<section>
+  <h2>Recursos</h2>
+  <p class="sub">Todo gratis y del formato actual. Empieza por los oficiales.</p>
+  <ol class="steps">
+    <li><b>ETS — Test Content and Structure</b><span>La estructura oficial vigente, sección por sección. La fuente de verdad. <a href="https://www.ets.org/toefl/test-takers/ibt/about/content.html">ets.org</a></span></li>
+    <li><b>ETS — Test Blueprint and Specifications 2026</b><span>El PDF con los criterios por sección, alineados al MCER. Este es el documento que le subes a la IA. Búscalo como “TOEFL iBT test specifications 2026” en el sitio de ETS.</span></li>
+    <li><b>ETS — Free Practice Test e Interactive Sample</b><span>Práctica auténtica y gratuita, con respuestas de ejemplo y explicaciones. Úsalo para el simulacro del día 1.</span></li>
+    <li><b>TST Prep</b><span>Canal de YouTube y prácticas gratis. <a href="https://www.youtube.com/@TSTPrep">youtube.com/@TSTPrep</a> · <a href="https://tstprep.com">tstprep.com</a></span></li>
+    <li><b>r/TOEFL</b><span>Reportes de gente que ya rindió el formato nuevo. Útil para saber qué esperar el día del examen.</span></li>
+  </ol>
+  <div class="note" style="margin-top:16px"><b>Un consejo sobre material pirata.</b> Circulan PDFs del libro oficial en sitios cualquiera. Además del tema legal, muchas de esas copias son del formato anterior a 2026, así que estarías practicando otro examen. Los documentos oficiales que necesitas son gratis.</div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--white)">Edisson Reinozo</strong> — Senior Full-Stack Engineer<br>
+    <a href="https://www.linkedin.com/in/edzzn/">linkedin.com/in/edzzn</a></p>
+    <p style="margin-top:14px">Charla para la Comunidad JavaScript Ecuador, 30 de julio de 2026.<br>
+    Los ejemplos de tareas y respuestas de esta página los escribí yo; no son material oficial del examen.</p>
+  </div>
+</footer>
+
+<div id="deck" aria-hidden="true">
+<div id="stage">
+
+<section class="slide mid" data-cue="Agradece a la comunidad. Preséntate en una línea. Da el resultado de una: 118/120, C2. Avisa que hay 30 min y 10 de preguntas, y que al final compartes los enlaces.">
+  <span class="eyebrow">Comunidad JavaScript Ecuador · 30 de julio de 2026</span>
+  <h1 class="st" style="font-size:calc(var(--u)*5.4);margin:calc(var(--u)*2.4) 0 calc(var(--u)*2.6)">Cómo alcanzar<br>un nivel C2 en el<br>examen TOEFL</h1>
+  <p style="margin:0;font-size:calc(var(--u)*1.9)"><b>Edisson Reinozo</b> — Senior Full-Stack Engineer</p>
+</section>
+
+<section class="slide mid" data-cue="Pregunta a la sala quién trabaja en inglés a diario. Luego el giro: eso no se traduce en puntaje. Cuenta que el primer simulacro te bajó del caballo, por formato y reloj, no por inglés.">
+  <p class="slead">Llevo seis años escribiendo<br>código, docs y PRs en inglés.</p>
+  <p class="slead mag" style="margin-top:calc(var(--u)*3.4)">En un examen cronometrado,<br>eso cuenta poquísimo.</p>
+</section>
+
+<section class="slide" data-cue="Perdiste puntos en las dos secciones donde uno PRODUCE lenguaje, no donde lo recibe. Y baja expectativas: nadie necesita 118, la mayoría de programas pide 90 o 100.">
+  <h2 class="st">El resultado</h2>
+  <div class="sbody sgrid" style="grid-template-columns:1fr 1.35fr;align-content:start">
+    <div class="sc" style="text-align:center;padding-top:calc(var(--u)*3)">
+      <div class="sbig">118</div>
+      <p style="margin:calc(var(--u)*1) 0 calc(var(--u)*1.6);font-size:calc(var(--u)*1.4)">de 120 · escala 0–120</p>
+      <span class="schip">C2</span>
+    </div>
+    <div class="sgrid g2" style="align-content:start">
+      <div class="sc" style="text-align:center"><div class="sband2" style="color:var(--cyan)">6.0</div><p style="margin-top:calc(var(--u)*.6)">Reading</p></div>
+      <div class="sc" style="text-align:center"><div class="sband2" style="color:var(--cyan)">6.0</div><p style="margin-top:calc(var(--u)*.6)">Listening</p></div>
+      <div class="sc" style="text-align:center"><div class="sband2" style="color:var(--violet)">5.5</div><p style="margin-top:calc(var(--u)*.6)">Writing</p></div>
+      <div class="sc" style="text-align:center"><div class="sband2" style="color:var(--violet)">5.5</div><p style="margin-top:calc(var(--u)*.6)">Speaking</p></div>
+    </div>
+  </div>
+  <p class="sfine">Bandas por sección, escala 1–6, vigente desde enero de 2026.</p>
+</section>
+
+<section class="slide" data-cue="LA SLIDE CENTRAL. Analogía: la diferencia entre saber programar y resolver un ejercicio en 20 minutos. Las tres de abajo son de ejecución, no de idioma.">
+  <p class="slead dimc">El TOEFL no mide tu inglés.</p>
+  <p class="slead" style="margin-top:calc(var(--u)*1.2)">Mide qué tan bien ejecutas<br>un formato bajo reloj.</p>
+  <div class="sgrid g3" style="margin-top:calc(var(--u)*3.4)">
+    <div class="sc"><div class="num">1</div><h4>Leer por estructura</h4><p>No palabra por palabra. Buscas la arquitectura del texto.</p></div>
+    <div class="sc v"><div class="num">2</div><h4>Esquematizar antes</h4><p>Treinta segundos de plan ahorran tres minutos de arreglo.</p></div>
+    <div class="sc m"><div class="num">3</div><h4>Notas livianas</h4><p>Si escribes de más, el audio te dejó atrás.</p></div>
+  </div>
+</section>
+
+<section class="slide" data-cue="Contexto para quien no lo conoce. Y el punto para esta sala: acá casi nadie va a volver a la universidad, así que dilo en sus términos — es un número verificable, no un adjetivo en el CV.">
+  <h2 class="st">¿Qué es el TOEFL iBT?</h2>
+  <div class="sbody sgrid g2" style="align-content:start">
+    <div class="sc"><h4>Un examen de inglés académico</h4><p>Lo hace ETS. Mide leer, escuchar, escribir y hablar en contexto universitario.</p></div>
+    <div class="sc v"><h4>iBT = Internet-Based Test</h4><p>Todo por computadora. En un centro autorizado o en tu casa con un proctor en vivo.</p></div>
+    <div class="sc m"><h4>¿Para qué sirve?</h4><p>Universidades sobre todo, también procesos migratorios y como prueba de nivel en un CV.</p></div>
+    <div class="sc"><h4>¿Qué te dan al final?</h4><p>Una banda de 1 a 6 por sección más el puntaje 0–120. Vale por dos años.</p></div>
+  </div>
+  <div class="sband"><b>¿Y si no piensas aplicar a una universidad?</b> Sirve igual: es un número verificable, que no es lo mismo que poner “inglés avanzado” en el CV.</div>
+</section>
+
+<section class="slide" data-cue="La tabla es de la especificación oficial de ETS. Señala el desbalance: Speaking son 11 ítems en 8 minutos, un cuarto de la nota sin margen para improvisar. Y los nombres raros son tareas nuevas.">
+  <h2 class="st">Cómo es el examen hoy</h2>
+  <p class="ss">Fuente: ETS, especificación oficial vigente</p>
+  <div class="sbody">
+    <table class="stable">
+      <tr><th>Sección</th><th>Tipos de tarea</th><th style="text-align:center">Ítems</th><th style="text-align:center">Tiempo</th></tr>
+      <tr><td>Reading</td><td>Complete the Words · Read in Daily Life · Read an Academic Passage</td><td class="n">50</td><td class="n">~30 min</td></tr>
+      <tr><td>Listening</td><td>Listen and Choose a Response · Conversation · Announcement · Academic Talk</td><td class="n">47</td><td class="n">~29 min</td></tr>
+      <tr><td>Writing</td><td>Build a Sentence · Write an Email · Write for an Academic Discussion</td><td class="n">12</td><td class="n">23 min</td></tr>
+      <tr><td>Speaking</td><td>Listen and Repeat · Take an Interview</td><td class="n">11</td><td class="n">8 min</td></tr>
+    </table>
+  </div>
+  <p class="sfoot mag">Unas 90 min de examen · cita de ~2 h con el check-in · sin pausas programadas</p>
+</section>
+
+<section class="slide" data-cue="El dato que casi nadie en la sala va a tener. Adaptativo = el arranque pesa más, no puedes calentar. Y la advertencia: material de 2023-2024 sigue saliendo primero en Google. La fuente de verdad es ets.org.">
+  <h2 class="st">Ojo: el examen cambió el 21 de enero de 2026</h2>
+  <div class="sbody sgrid g2" style="align-content:start">
+    <div class="sc"><h4>Adaptativo</h4><p>Reading y Listening enrutan por etapas: cómo te va en la primera define el techo de la segunda.</p></div>
+    <div class="sc v"><h4>Más corto</h4><p>De ~3 horas a ~90 minutos de examen efectivo.</p></div>
+    <div class="sc m"><h4>Escala nueva</h4><p>1 a 6 por sección, alineada al MCER. El 0–120 sigue apareciendo hasta 2028.</p></div>
+    <div class="sc"><h4>Tareas nuevas</h4><p>Complete the Words, Listen and Repeat, Build a Sentence, Write an Email.</p></div>
+  </div>
+  <div class="sband mag"><b>Buena parte del material gratis que hay en internet es del formato anterior.</b> Revisa la fecha antes de estudiar con algo: practicar el examen viejo es entrenar para otro deporte.</div>
+</section>
+
+<section class="slide" data-cue="Es leer el spec antes de escribir el código. Nadie implementa adivinando requisitos, pero rendimos exámenes adivinando la rúbrica.">
+  <h2 class="st">Regla número uno: la rúbrica antes que el contenido</h2>
+  <p class="sfoot mag" style="font-size:calc(var(--u)*2.1);margin-top:calc(var(--u)*1.6)">Saber cómo te califican importa más que tu nivel de inglés.</p>
+  <div class="sbody">
+    <div class="srow"><div class="num">1</div><div><b>Cada tarea premia cosas concretas</b><span>Estructura, desarrollo de la idea, precisión, uso del tiempo. No “sonar bonito”.</span></div></div>
+    <div class="srow"><div class="num">2</div><div><b>Los puntos se pierden por omisión</b><span>Casi nunca es un error de gramática. Es una parte de la tarea que no cumpliste.</span></div></div>
+    <div class="srow"><div class="num">3</div><div><b>Los criterios son públicos</b><span>La guía oficial está en ets.org. Leerla toma veinte minutos.</span></div></div>
+  </div>
+</section>
+
+<section class="slide" data-cue="Tres cosas y no hay una cuarta. Sin libros, sin curso. Lo clave de TST Prep: lo lleva un ex-calificador, así que explica el CRITERIO. Aclara honestamente que no tomaste el curso pagado.">
+  <h2 class="st">Mi stack de preparación, en orden de impacto</h2>
+  <div class="sbody">
+    <div class="srow"><div class="num">1</div><div><b>TST Prep</b><span>Canal de YouTube y tests de práctica gratuitos. Lo lleva un ex-calificador del examen, así que explica el criterio, no solo la respuesta.</span></div></div>
+    <div class="srow"><div class="num">2</div><div><b>Un loop de feedback con IA</b><span>Le doy la guía oficial, respondo con cronómetro, pido calificación y corrijo. Es el 80 % de mi práctica de Writing y Speaking.</span></div></div>
+    <div class="srow"><div class="num">3</div><div><b>Plantillas memorizadas</b><span>Una estructura fija por tipo de tarea, para no gastar el reloj inventando el esqueleto.</span></div></div>
+  </div>
+  <p class="sfine">Solo usé los recursos gratuitos. TST Prep tiene curso pagado, pero no lo tomé y no puedo opinar sobre él.</p>
+</section>
+
+<section class="slide" data-cue="El corazón del método. EL TRUCO: nunca pidas 'mejóralo' — pide dónde exactamente perdiste puntos y por qué. Y repite la MISMA tarea, no una nueva. Es TDD con feedback en 30 segundos.">
+  <h2 class="st">El loop de Writing</h2>
+  <p class="ss">Cuatro pasos, repetidos hasta que el formato sale solo</p>
+  <div class="sbody sgrid g4" style="align-content:start">
+    <div class="sc"><div class="num">1</div><h4>Escribir</h4><p>Con cronómetro y en el tiempo real de la tarea. El reloj es parte de lo que practicas.</p></div>
+    <div class="sc v"><div class="num">2</div><h4>Calificar</h4><p>Le paso la guía y mi texto, y pido nota por criterio.</p></div>
+    <div class="sc m"><div class="num">3</div><h4>Diagnosticar</h4><p>No “mejóralo”. Pregunto: ¿dónde exactamente perdí puntos y por qué?</p></div>
+    <div class="sc"><div class="num">4</div><h4>Repetir</h4><p>Misma tarea otra vez, hasta que el error deja de aparecer.</p></div>
+  </div>
+  <p class="sfoot mag">La clave no es que la IA escriba por ti. Es que te diga dónde perdiste puntos, en segundos.</p>
+</section>
+
+<section class="slide" data-cue="LO MEJOR PARA SPEAKING. Las llamadas de voz: le explicas el formato una vez y practicas HABLANDO, no escribiendo. Di la frase: si van a copiar una sola cosa de esta charla para Speaking, copien esto.">
+  <h2 class="st">El loop de Speaking</h2>
+  <p class="ss">El mismo ciclo, más un paso y una variante que funcionó mejor</p>
+  <div class="sbody sgrid g4" style="align-content:start">
+    <div class="sc m"><div class="num">1</div><h4>Grabar</h4><p>Con el celular, usando las prácticas de TST Prep y los tiempos reales.</p></div>
+    <div class="sc v"><div class="num">2</div><h4>Transcribir</h4><p>Lo que dijiste, tal cual. Sin arreglarlo al pasarlo a texto.</p></div>
+    <div class="sc"><div class="num">3</div><h4>Calificar</h4><p>Estructura, muletillas, ritmo y uso del tiempo.</p></div>
+    <div class="sc m"><div class="num">4</div><h4>Repetir</h4><p>Hasta que el esqueleto de la respuesta sea automático.</p></div>
+  </div>
+  <div class="sgrid g2" style="margin-top:calc(var(--u)*1.4)">
+    <div class="sband" style="margin:0"><b>Llamadas de voz con la IA.</b> Le expliqué el formato una vez y practiqué hablando, no escribiendo. Fue lo que más me sirvió.</div>
+    <div class="sband mag" style="margin:0"><b>Truco del día del examen.</b> En la tarea de repetir, tomar apuntes me sirvió mucho. Nadie te dice que puedes.</div>
+  </div>
+</section>
+
+<section class="slide" data-cue="Aclara que es reconstruido, no palabra por palabra. Lo que cambia todo es subirle el documento oficial: sin él califica con criterio inventado. Truco extra: pídele que prediga la nota.">
+  <h2 class="st">Cómo le pedí ayuda a la IA</h2>
+  <p class="ss">Reconstruido: la idea, no las palabras exactas</p>
+  <div class="sbody sgrid" style="grid-template-columns:1.15fr 1fr;align-content:start">
+<pre class="spre">[adjunto: la guía oficial del examen, en PDF]
+
+Con base en esta guía, genérame preguntas
+de práctica para [tipo de tarea].
+
+Cuando te dé mi respuesta:
+1. Califícala con los criterios de la guía.
+2. Dime dónde perdí puntos y por qué.
+3. Dame los tres arreglos de mayor impacto.
+
+No reescribas mi respuesta.</pre>
+    <div>
+      <div class="sc" style="margin-bottom:calc(var(--u)*1.2)"><h4>Súbele el documento oficial</h4><p>Eso es lo que cambia todo. Sin la guía, califica con criterio inventado.</p></div>
+      <div class="sc v" style="margin-bottom:calc(var(--u)*1.2)"><h4>Pide preguntas por tipo de tarea</h4><p>Una a una, no un simulacro entero. Así practicas dirigido.</p></div>
+      <div class="sc m"><h4>No dejes que reescriba</h4><p>Si reescribe, te devuelve un texto perfecto que no escribiste tú.</p></div>
+    </div>
+  </div>
+  <p class="sfoot">El prompt importa menos de lo que parece. Lo que importa es que la IA tenga la guía oficial y que tú escribas la respuesta.</p>
+</section>
+
+<section class="slide" data-cue="Aclara que la tarea la escribiste tú como ejemplo, no es la oficial. No te detengas mucho: la que demuestra el punto es la siguiente.">
+  <h2 class="st">Plantillas: no es trampa, es la estructura esperada</h2>
+  <p class="sfoot" style="font-size:calc(var(--u)*1.95);margin-top:calc(var(--u)*1.5)"><span style="color:var(--cyan)">Piensa en un correo.</span> Todos empiezan igual y terminan igual, y tienen las mismas partes. Lo único que cambia es el medio.</p>
+  <div class="sbody sgrid g2" style="align-content:start">
+    <div class="sc">
+      <h4 style="font-size:calc(var(--u)*1.15);letter-spacing:.1em">UNA TAREA DEL EXAMEN · WRITE AN EMAIL</h4>
+      <p style="color:#fff;font-size:calc(var(--u)*1.4)">Trabajas en un proyecto grupal de un curso. Un compañero no ha estado participando y ha faltado a varias entregas. Escríbele un correo donde describas el avance del proyecto, expliques cómo su ausencia afecta al grupo y propongas cómo puede contribuir.</p>
+      <p style="margin-top:calc(var(--u)*1);font-size:calc(var(--u)*1.1);color:var(--dim);font-style:italic">Redactado por mí como ejemplo. Tienes unos 7 minutos.</p>
+    </div>
+    <div class="sc v">
+      <h4 style="font-size:calc(var(--u)*1.15);letter-spacing:.1em">EL ESQUELETO, SIEMPRE EL MISMO</h4>
+      <p style="color:#fff;font-size:calc(var(--u)*1.45);line-height:2">1&nbsp;&nbsp; Saludo y a quién le escribes<br>2&nbsp;&nbsp; Por qué escribes, en una línea<br>3&nbsp;&nbsp; El detalle o la razón, con un ejemplo<br>4&nbsp;&nbsp; Lo que pides o lo que propones<br>5&nbsp;&nbsp; Cierre corto y agradecimiento</p>
+    </div>
+  </div>
+  <div class="sband">Nadie dice que escribir correos sea hacer trampa. Y nadie improvisa la estructura de un correo tampoco.</div>
+</section>
+
+<section class="slide" data-cue="PRIMERO lee el correo completo en voz alta, normal, sin explicar. DESPUÉS señala el celeste: todo eso ya lo sabías antes de entrar. Remate: no escribí mejor inglés que el resto, gasté el reloj en un solo problema en vez de dos.">
+  <h2 class="st">El mismo correo: lo que se repite y lo que cambia</h2>
+  <div class="sbody">
+    <div class="sleg">
+      <span><i style="background:var(--cyan)"></i>Se repite en todos los correos</span>
+      <span><i style="background:#fff"></i>Lo único que tienes que pensar</span>
+    </div>
+    <div class="semail">
+      <span class="fx">Hi Alex,</span><br><br>
+      <span class="fx">I’m writing about </span><span class="ct">our group project.</span><br>
+      <span class="fx">Right now </span><span class="ct">we’ve finished the research and the first draft, and we present next week.</span><br><br>
+      <span class="fx">The problem is that </span><span class="ct">your parts haven’t come in, so the rest of us covered them and we fell behind.</span><br><br>
+      <span class="fx">Would you be able to </span><span class="ct">take the data section and send it by Friday? </span><span class="fx">If that doesn’t work, tell me what does.</span><br><br>
+      <span class="fx">Thanks, and let me know how you’d like to handle it.</span><br>
+      <span class="fx">Best, Edisson</span>
+    </div>
+  </div>
+  <p class="sfoot"><span style="color:var(--magenta)">Casi la mitad del correo es estructura.</span> Esa mitad la puedes tener automática antes de entrar al examen.</p>
+</section>
+
+<section class="slide" data-cue="Abre desarmando la autoridad a propósito: 'no les voy a decir qué sirve, tengo un solo caso y es el mío'. Remate: no copien mi lista, copien el método de averiguar su propio cuello de botella.">
+  <h2 class="st">En qué gasté mi tiempo, y en qué no</h2>
+  <div class="sbody scols" style="align-content:start">
+    <div class="u">
+      <h4>LO QUE USÉ</h4>
+      <ul><li>Leí la guía y los criterios oficiales</li><li>Hice simulacros completos y cronometrados</li><li>El loop de feedback con IA</li><li>Drills de Speaking, cortos pero diarios</li><li>Mis propias abreviaturas para tomar notas</li></ul>
+    </div>
+    <div class="x">
+      <h4>LO QUE NO USÉ</h4>
+      <ul><li>Apps de vocabulario</li><li>Libros de gramática</li><li>Cursos pagados</li><li>Meses de estudio</li><li>Material anterior al formato de 2026</li></ul>
+    </div>
+  </div>
+  <p class="sfoot"><b>Un solo caso, el mío, y ya trabajaba en inglés a diario.</b> <span style="color:var(--muted);font-weight:400">No es una receta: es de dónde partí y qué me funcionó.</span></p>
+</section>
+
+<section class="slide" data-cue="Números de tus recibos. El error en primera persona: estabas resolviendo 'rendir el examen' cuando el problema era 'hacer llegar un puntaje a una universidad'. No es plata que me arruine, es plata que era gratis diez días antes.">
+  <h2 class="st">Logística desde Ecuador</h2>
+  <p class="ss">Lo que me habría gustado saber antes de pagar</p>
+  <div class="sbody sgrid g3" style="align-content:start">
+    <div class="sc"><h4>USD 230</h4><p>Lo que pagué en junio de 2026. Mismo precio en centro o en casa.</p></div>
+    <div class="sc v"><h4>Home Edition</h4><p>En tu casa con un proctor humano en vivo. Ahorra el viaje a Quito o Guayaquil.</p></div>
+    <div class="sc m"><h4>Prueba el equipo primero</h4><p>Corre el equipment check dos o tres veces, a distintas horas, ANTES de pagar.</p></div>
+    <div class="sc"><h4>4 envíos gratis</h4><p>Solo si eliges las instituciones AL REGISTRARTE. Después son USD 29 por reporte.</p></div>
+    <div class="sc v"><h4>Validez 2 años</h4><p>Aplica a todo lo que puedas dentro de esa ventana.</p></div>
+    <div class="sc m"><h4>Sin pausas</h4><p>Noventa minutos seguidos. Come y ve al baño antes.</p></div>
+  </div>
+  <div class="sband mag"><b>Mi error:</b> no elegí las instituciones al registrarme. Enviar el puntaje después me costó USD 29 extra.</div>
+</section>
+
+<section class="slide" data-cue="No es teórico: te registraste el 16 y rendiste el 27. El día 1 es el que todos se saltan. El día 7 va entero a la sección más débil. El día 9 no se estudia.">
+  <h2 class="st">Un plan de diez días</h2>
+  <p class="ss">Sirve si ya trabajas en inglés todos los días</p>
+  <div class="sbody sgrid g3" style="align-content:start">
+    <div class="sc"><h4>Día 1</h4><p>Simulacro diagnóstico completo, cronometrado. Sin estudiar nada antes.</p></div>
+    <div class="sc"><h4>Días 2–3</h4><p>Drill de Speaking. Una hora diaria, grabando y calificando.</p></div>
+    <div class="sc"><h4>Día 4</h4><p>Writing. Tres respuestas completas con el loop.</p></div>
+    <div class="sc"><h4>Día 5</h4><p>Listening tomando notas con tus propias abreviaturas.</p></div>
+    <div class="sc"><h4>Día 6</h4><p>Segundo simulacro completo.</p></div>
+    <div class="sc"><h4>Día 7</h4><p>Solo tu sección más débil, según el simulacro.</p></div>
+    <div class="sc"><h4>Día 8</h4><p>Un drill final de Speaking y uno de Writing.</p></div>
+    <div class="sc"><h4>Día 9</h4><p>Repaso liviano, equipment check, preparar el espacio.</p></div>
+    <div class="sc m" style="background:#3b1046"><h4>Día 10</h4><p style="color:#fff">Examen.</p></div>
+  </div>
+  <p class="sfoot"><span style="color:var(--cyan)">Me registré el 16 de junio y rendí el 27. Once días.</span> <span style="color:var(--muted);font-weight:400">Unas 15 horas de estudio en total.</span></p>
+</section>
+
+<section class="slide" data-cue="Tres ideas y cierra. La frase final es el resumen de todo: no fue nivel de inglés, fue tratar el examen como un problema de ingeniería.">
+  <h2 class="st">Tres ideas para llevarse</h2>
+  <div class="sbody sgrid g3" style="align-content:start">
+    <div class="sc"><div class="num">1</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">No estudies inglés.<br>Estudia el formato.</h4></div>
+    <div class="sc v"><div class="num">2</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">Consigue feedback rápido y contra la rúbrica.</h4></div>
+    <div class="sc m"><div class="num">3</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">Automatiza la estructura para gastar el reloj en contenido.</h4></div>
+  </div>
+  <p class="sfoot mag" style="font-size:calc(var(--u)*1.9)">118 de 120 no fue nivel de inglés. Fue tratar el examen como un problema de ingeniería.</p>
+</section>
+
+<section class="slide" data-cue="Da los recursos oficiales, menciona la página con todo el contenido, e invita a escribirte por LinkedIn. Preguntas frecuentes: cuánto estudiaste, TOEFL o IELTS, cuánto puntaje necesito, cuál sección es la más difícil.">
+  <h2 class="st" style="font-size:calc(var(--u)*5.4)">Gracias</h2>
+  <p class="slead mag" style="font-size:calc(var(--u)*2.6);margin-top:calc(var(--u)*1)">Preguntas</p>
+  <div class="sbody sgrid g2" style="align-content:start">
+    <div class="sc">
+      <h4 style="font-size:calc(var(--u)*1.15);letter-spacing:.1em">RECURSOS</h4>
+      <p style="color:#fff;font-size:calc(var(--u)*1.38);line-height:1.9">ets.org — formato oficial, especificación y práctica gratis<br>tstprep.com — canal de YouTube y prácticas<br>r/TOEFL — reportes de quienes ya lo rindieron</p>
+    </div>
+    <div class="sc v">
+      <h4 style="font-size:calc(var(--u)*1.15);letter-spacing:.1em">CONTACTO</h4>
+      <p style="color:#fff;font-size:calc(var(--u)*2);font-weight:800;margin-bottom:calc(var(--u)*.4)">Edisson Reinozo</p>
+      <p style="font-size:calc(var(--u)*1.35)">Senior Full-Stack Engineer</p>
+      <p style="color:var(--cyan);font-size:calc(var(--u)*1.45);margin-top:calc(var(--u)*.9)">linkedin.com/in/edzzn</p>
+    </div>
+  </div>
+</section>
+
+</div>
+<div id="bar"></div>
+<div id="hud"></div>
+<div id="hint">← → navegar · N notas · F pantalla completa · Esc salir</div>
+<div id="cue"><b>NOTA</b><span id="cuetext"></span></div>
+</div>
+
+<script>
+(function(){
+  var body=document.body, deck=document.getElementById('deck'), stage=document.getElementById('stage');
+  var slides=[].slice.call(deck.querySelectorAll('.slide'));
+  var hud=document.getElementById('hud'), bar=document.getElementById('bar');
+  var hint=document.getElementById('hint'), cuetext=document.getElementById('cuetext');
+  var i=0, on=false, hintTimer, baseU=10;
+
+  function fit(){
+    var w=window.innerWidth, h=window.innerHeight;
+    var sw=Math.min(w, h*16/9), sh=Math.min(h, w*9/16);
+    baseU=sw/100;
+    stage.style.setProperty('--sw', sw+'px');
+    stage.style.setProperty('--sh', sh+'px');
+    stage.style.setProperty('--u', baseU+'px');
+    slides.forEach(function(s){ s.style.removeProperty('--u'); });
+    if(on) autofit(slides[i]);
+  }
+  // Shrink a single slide's type scale until its content fits. Cheap insurance
+  // against font substitution or an unusually narrow window.
+  function autofit(s){
+    s.style.removeProperty('--u');
+    var k=1;
+    while(k>0.6 && s.scrollHeight > s.clientHeight + 2){
+      k -= 0.04;
+      s.style.setProperty('--u', (baseU*k)+'px');
+    }
+  }
+  function show(n){
+    i=Math.max(0, Math.min(slides.length-1, n));
+    slides.forEach(function(s,k){ s.classList.toggle('on', k===i); });
+    autofit(slides[i]);
+    hud.textContent=(i+1)+' / '+slides.length;
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    cuetext.textContent=slides[i].getAttribute('data-cue')||'';
+    try{ history.replaceState(null,'','#s'+(i+1)); }catch(e){}
+  }
+  function enter(){
+    on=true; body.classList.add('presenting'); deck.setAttribute('aria-hidden','false');
+    fit();
+    var m=/^#s(\d+)$/.exec(location.hash);
+    show(m?parseInt(m[1],10)-1:0);
+    if(document.documentElement.requestFullscreen){
+      document.documentElement.requestFullscreen().catch(function(){});
+    }
+    hint.style.opacity='1';
+    clearTimeout(hintTimer);
+    hintTimer=setTimeout(function(){ hint.style.opacity='0'; }, 4000);
+  }
+  function exit(){
+    on=false; body.classList.remove('presenting','cues');
+    deck.setAttribute('aria-hidden','true');
+    if(document.fullscreenElement && document.exitFullscreen){ document.exitFullscreen().catch(function(){}); }
+  }
+
+  document.getElementById('presentbtn').addEventListener('click', enter);
+  window.addEventListener('resize', function(){ if(on) fit(); });
+  document.addEventListener('fullscreenchange', function(){
+    if(on && !document.fullscreenElement){ /* keep presenting; user may have pressed Esc on fullscreen only */ }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!on){
+      if(e.key==='p' || e.key==='P'){ enter(); }
+      return;
+    }
+    switch(e.key){
+      case 'ArrowRight': case 'ArrowDown': case ' ': case 'PageDown': case 'Enter':
+        e.preventDefault(); show(i+1); break;
+      case 'ArrowLeft': case 'ArrowUp': case 'PageUp':
+        e.preventDefault(); show(i-1); break;
+      case 'Home': e.preventDefault(); show(0); break;
+      case 'End': e.preventDefault(); show(slides.length-1); break;
+      case 'Escape': exit(); break;
+      case 'n': case 'N': body.classList.toggle('cues'); break;
+      case 'f': case 'F':
+        if(document.fullscreenElement){ document.exitFullscreen(); }
+        else if(document.documentElement.requestFullscreen){ document.documentElement.requestFullscreen().catch(function(){}); }
+        break;
+    }
+  });
+
+  deck.addEventListener('click', function(e){
+    if(!on) return;
+    if(e.target.closest('#cue')) return;
+    show(e.clientX < window.innerWidth*0.28 ? i-1 : i+1);
+  });
+
+  var tx=null;
+  deck.addEventListener('touchstart', function(e){ tx=e.changedTouches[0].clientX; }, {passive:true});
+  deck.addEventListener('touchend', function(e){
+    if(!on || tx===null) return;
+    var d=e.changedTouches[0].clientX-tx;
+    if(Math.abs(d)>44) show(d<0 ? i+1 : i-1);
+    tx=null;
+  }, {passive:true});
+})();
+</script>
+
+</body>
+</html>
