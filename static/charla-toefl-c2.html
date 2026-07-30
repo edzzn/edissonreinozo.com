@@ -148,7 +148,10 @@
 
   .st{font-size:calc(var(--u)*3.5);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:0}
   .ss{font-size:calc(var(--u)*1.5);color:var(--muted);font-style:italic;margin:calc(var(--u)*.7) 0 0}
-  .sbody{margin-top:calc(var(--u)*2.4);flex:1;min-height:0}
+  /* flex-shrink:0 a propósito: si el contenido no cabe, la slide crece y autofit()
+     la detecta y baja la escala de tipografía. Con shrink:1 el contenido se
+     desbordaba en silencio y se montaba sobre el .sfoot. */
+  .sbody{margin-top:calc(var(--u)*2.4);flex:1 0 auto;min-height:0}
   .slead{font-size:calc(var(--u)*3.0);font-weight:800;line-height:1.25;letter-spacing:-.015em;margin:0}
   .slead.dimc{color:var(--muted)}
   .slead.mag{color:var(--magenta)}
@@ -316,10 +319,17 @@
   <h2>El loop de Speaking</h2>
   <p class="sub">El mismo ciclo, más un paso y una variante que funcionó mejor.</p>
   <ol class="steps">
-    <li><b>Grabar</b><span>Con el celular, usando las prácticas de TST Prep y respetando los tiempos reales.</span></li>
+    <li><b>Grabar</b><span>Con el celular, sobre los videos de YouTube y el mock test gratuito de TST Prep, respetando los tiempos reales.</span></li>
     <li><b>Transcribir</b><span>Lo que dijiste, tal cual. Si lo arreglas al pasarlo a texto, borraste el dato.</span></li>
     <li><b>Calificar</b><span>Estructura, muletillas, ritmo y uso del tiempo.</span></li>
     <li><b>Repetir</b><span>Hasta que el esqueleto de la respuesta sea automático.</span></li>
+  </ol>
+  <h3>Tres técnicas para responder</h3>
+  <p>Además del loop, lo que más movió la aguja fueron técnicas de respuesta, no de inglés:</p>
+  <ol class="steps">
+    <li><b>Una frase puente para arrancar</b><span>En la tarea tipo entrevista casi no hay tiempo de preparación: te toca empezar a hablar. Abrir con algo como <em>“that’s a really interesting topic”</em> te compra dos o tres segundos para ordenar la idea y, sobre todo, te baja los nervios en vez de empezar tartamudeando.</span></li>
+    <li><b>Postura o contraste</b><span>Dos moldes que sirven para casi cualquier tema: tomar una posición y defenderla, o contrastar los pros y los contras. Elegir el molde en el primer segundo es más importante que tener la mejor idea.</span></li>
+    <li><b>Un ejemplo propio para cerrar</b><span>Cómo te afectó a ti, o algo parecido que viste en tu día a día. Es lo que convierte una opinión suelta en una respuesta con estructura, y además llena el tiempo sin repetirte.</span></li>
   </ol>
   <h3>Lo que más me sirvió: llamadas de voz con la IA</h3>
   <p>Grabar y transcribir funciona pero es lento. Le expliqué el formato una sola vez y después practiqué <strong>hablando</strong>, en llamada de voz, en vez de escribiendo. Ahí ya no estás redactando: estás hablando bajo presión, que es exactamente lo que mide el examen, y el feedback llega al terminar sin transcribir nada a mano.</p>
@@ -449,7 +459,7 @@ No reescribas mi respuesta.</pre>
     <li><b>Consigue feedback rápido y contra la rúbrica.</b><span>Rápido para poder iterar, contra la rúbrica para que sea el criterio real.</span></li>
     <li><b>Automatiza la estructura.</b><span>Para gastar el reloj en contenido y no en decidir cómo empezar.</span></li>
   </ol>
-  <div class="takeaway"><em>118 de 120 no fue nivel de inglés.</em> Fue tratar el examen como un problema de ingeniería.</div>
+  <div class="takeaway"><em>Con el mismo inglés, sin estudiar la estructura, apenas habría llegado a un B2.</em> Entender el formato es lo que subió el puntaje.</div>
 </section>
 
 <section>
@@ -590,18 +600,17 @@ No reescribas mi respuesta.</pre>
   <p class="sfoot mag">La clave no es que la IA escriba por ti. Es que te diga dónde perdiste puntos, en segundos.</p>
 </section>
 
-<section class="slide" data-cue="LO MEJOR PARA SPEAKING. Las llamadas de voz: le explicas el formato una vez y practicas HABLANDO, no escribiendo. Di la frase: si van a copiar una sola cosa de esta charla para Speaking, copien esto.">
-  <h2 class="st">El loop de Speaking</h2>
-  <p class="ss">El mismo ciclo, más un paso y una variante que funcionó mejor</p>
-  <div class="sbody sgrid g4" style="align-content:start">
-    <div class="sc m"><div class="num">1</div><h4>Grabar</h4><p>Con el celular, usando las prácticas de TST Prep y los tiempos reales.</p></div>
-    <div class="sc v"><div class="num">2</div><h4>Transcribir</h4><p>Lo que dijiste, tal cual. Sin arreglarlo al pasarlo a texto.</p></div>
-    <div class="sc"><div class="num">3</div><h4>Calificar</h4><p>Estructura, muletillas, ritmo y uso del tiempo.</p></div>
-    <div class="sc m"><div class="num">4</div><h4>Repetir</h4><p>Hasta que el esqueleto de la respuesta sea automático.</p></div>
+<section class="slide" data-cue="Estas tres son técnicas de respuesta, no de inglés. La 1: en la entrevista NO hay tiempo de preparación, tienes que empezar a hablar ya — la frase puente te compra segundos. La 2 y la 3: la estructura la eliges, no la improvisas. Y el remate: las llamadas de voz con la IA son lo mejor para Speaking — si van a copiar una sola cosa de esta charla, copien esa.">
+  <h2 class="st">Speaking: tres técnicas para responder</h2>
+  <p class="ss">Practicado con los videos y el mock test gratis de TST Prep, con los tiempos reales</p>
+  <div class="sbody sgrid g3" style="align-content:start">
+    <div class="sc"><div class="num">1</div><h4>Una frase puente</h4><p>En la entrevista casi no hay tiempo de preparación: te toca empezar a hablar. Un “that’s a really interesting topic” te compra dos o tres segundos y te baja los nervios.</p></div>
+    <div class="sc v"><div class="num">2</div><h4>Postura o contraste</h4><p>Dos moldes que sirven para casi cualquier tema: tomar una posición y defenderla, o contrastar los pros y los contras.</p></div>
+    <div class="sc m"><div class="num">3</div><h4>Un ejemplo tuyo</h4><p>Cómo te afectó a ti, o algo parecido que viste en tu día a día. Es lo que convierte una opinión suelta en una respuesta con estructura.</p></div>
   </div>
   <div class="sgrid g2" style="margin-top:calc(var(--u)*1.4)">
     <div class="sband" style="margin:0"><b>Llamadas de voz con la IA.</b> Le expliqué el formato una vez y practiqué hablando, no escribiendo. Fue lo que más me sirvió.</div>
-    <div class="sband mag" style="margin:0"><b>Truco del día del examen.</b> En la tarea de repetir, tomar apuntes me sirvió mucho. Nadie te dice que puedes.</div>
+    <div class="sband mag" style="margin:0"><b>Truco del día del examen.</b> En la tarea de repetir, tomar apuntes me sirvió mucho.</div>
   </div>
 </section>
 
@@ -643,7 +652,6 @@ No reescribas mi respuesta.</pre>
       <p style="color:#fff;font-size:calc(var(--u)*1.45);line-height:2">1&nbsp;&nbsp; Saludo y a quién le escribes<br>2&nbsp;&nbsp; Por qué escribes, en una línea<br>3&nbsp;&nbsp; El detalle o la razón, con un ejemplo<br>4&nbsp;&nbsp; Lo que pides o lo que propones<br>5&nbsp;&nbsp; Cierre corto y agradecimiento</p>
     </div>
   </div>
-  <div class="sband">Nadie dice que escribir correos sea hacer trampa. Y nadie improvisa la estructura de un correo tampoco.</div>
 </section>
 
 <section class="slide" data-cue="PRIMERO lee el correo completo en voz alta, normal, sin explicar. DESPUÉS señala el celeste: todo eso ya lo sabías antes de entrar. Remate: no escribí mejor inglés que el resto, gasté el reloj en un solo problema en vez de dos.">
@@ -712,14 +720,14 @@ No reescribas mi respuesta.</pre>
   <p class="sfoot"><span style="color:var(--cyan)">Me registré el 16 de junio y rendí el 27. Once días.</span> <span style="color:var(--muted);font-weight:400">Unas 15 horas de estudio en total.</span></p>
 </section>
 
-<section class="slide" data-cue="Tres ideas y cierra. La frase final es el resumen de todo: no fue nivel de inglés, fue tratar el examen como un problema de ingeniería.">
+<section class="slide" data-cue="Tres ideas y cierra. La frase final es el resumen de todo: el mismo inglés, sin estudiar la estructura, habría dado apenas un B2. El formato es lo que subió el puntaje.">
   <h2 class="st">Tres ideas para llevarse</h2>
   <div class="sbody sgrid g3" style="align-content:start">
     <div class="sc"><div class="num">1</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">No estudies inglés.<br>Estudia el formato.</h4></div>
     <div class="sc v"><div class="num">2</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">Consigue feedback rápido y contra la rúbrica.</h4></div>
     <div class="sc m"><div class="num">3</div><h4 style="color:#fff;font-size:calc(var(--u)*2.1);line-height:1.25">Automatiza la estructura para gastar el reloj en contenido.</h4></div>
   </div>
-  <p class="sfoot mag" style="font-size:calc(var(--u)*1.9)">118 de 120 no fue nivel de inglés. Fue tratar el examen como un problema de ingeniería.</p>
+  <p class="sfoot mag" style="font-size:calc(var(--u)*1.9)">Con el mismo inglés, sin estudiar la estructura, apenas habría llegado a un B2. Entender el formato es lo que subió el puntaje.</p>
 </section>
 
 <section class="slide" data-cue="Da los recursos oficiales, menciona la página con todo el contenido, e invita a escribirte por LinkedIn. Preguntas frecuentes: cuánto estudiaste, TOEFL o IELTS, cuánto puntaje necesito, cuál sección es la más difícil.">
